@@ -8,11 +8,12 @@ import {
   Building2,
   GraduationCap,
 } from "lucide-react";
+import { IconRenderer } from "@/components/ui/icon-renderer";
+import contactData from "@/lib/data/pages/contact";
 
 export const metadata: Metadata = {
-  title: "Contato",
-  description:
-    "Entre em contato com GeoJogos para projetos de jogos educacionais personalizados, parcerias com escolas ou colaboração em pesquisa.",
+  title: contactData.metadata.title,
+  description: contactData.metadata.description,
 };
 
 const contactReasons = [
@@ -37,18 +38,20 @@ const contactReasons = [
 ];
 
 export default function ContactPage() {
+  const titleParts = contactData.hero.title.split(" ");
+  const lastWord = titleParts.pop();
+
   return (
     <div>
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h1 className="text-4xl font-bold text-foreground md:text-5xl">
-            Entre em <span className="text-primary">Contato</span>
+            {titleParts.join(" ")}{" "}
+            <span className="text-primary">{lastWord}</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Tem um projeto em mente? Quer saber mais sobre nossos jogos
-            educacionais? Gostaríamos de ouvir você. Vamos discutir como podemos
-            ajudar a transformar a educação em Geografia em sua escola.
+            {contactData.hero.subtitle}
           </p>
         </div>
       </section>
@@ -60,11 +63,10 @@ export default function ContactPage() {
           <div className="lg:col-span-2 space-y-8">
             <div>
               <h2 className="text-2xl font-bold text-foreground">
-                Informações de Contato
+                {contactData.info.title}
               </h2>
               <p className="mt-2 text-muted-foreground">
-                Entre em contato através do formulário ou nos contacte
-                diretamente.
+                {contactData.info.lead}
               </p>
             </div>
 
@@ -76,7 +78,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-semibold text-foreground">Email</h3>
                   <p className="text-muted-foreground">
-                    contact@geojogos.com.br
+                    {contactData.info.email}
                   </p>
                 </div>
               </div>
@@ -86,7 +88,9 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-foreground">Localização</h3>
-                  <p className="text-muted-foreground">Brasil</p>
+                  <p className="text-muted-foreground">
+                    {contactData.info.location}
+                  </p>
                 </div>
               </div>
             </div>
@@ -95,21 +99,26 @@ export default function ContactPage() {
               <h3 className="font-semibold text-foreground">
                 Como Podemos Ajudar?
               </h3>
-              {contactReasons.map((reason) => (
-                <Card key={reason.title} className="bg-muted/50">
-                  <CardContent className="flex gap-4 p-4">
-                    <reason.icon className="h-5 w-5 shrink-0 text-primary" />
-                    <div>
-                      <h4 className="font-medium text-foreground">
-                        {reason.title}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {reason.description}
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {contactData.reasons.map((reason) => {
+                return (
+                  <Card key={reason.title} className="bg-muted/50">
+                    <CardContent className="flex gap-4 p-4">
+                      <IconRenderer
+                        name={reason.iconKey}
+                        className="h-5 w-5 shrink-0 text-primary"
+                      />
+                      <div>
+                        <h4 className="font-medium text-foreground">
+                          {reason.title}
+                        </h4>
+                        <p className="text-sm text-muted-foreground">
+                          {reason.description}
+                        </p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
 
@@ -118,7 +127,7 @@ export default function ContactPage() {
             <Card>
               <CardContent className="p-6 md:p-8">
                 <h2 className="mb-6 text-2xl font-bold text-foreground">
-                  Envie-nos uma Mensagem
+                  {contactData.form.title}
                 </h2>
                 <ContactForm />
               </CardContent>

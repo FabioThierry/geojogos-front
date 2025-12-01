@@ -5,15 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Sobre", href: "/about" },
-  { name: "Jogos", href: "/games" },
-  { name: "Projetos Personalizados", href: "/custom-projects" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contato", href: "/contact" },
-];
+import navData from "@/lib/data/shared/nav";
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -34,7 +26,7 @@ export function Header() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex lg:items-center lg:gap-8">
-          {navigation.map((item) => (
+          {navData.items.map((item) => (
             <Link
               key={item.name}
               href={item.href}
@@ -47,7 +39,7 @@ export function Header() {
             asChild
             className="bg-primary hover:bg-primary-dark text-primary-foreground"
           >
-            <Link href="/contact">Entre em Contato</Link>
+            <Link href="/contact">{navData.contactButton}</Link>
           </Button>
         </div>
 
@@ -70,7 +62,7 @@ export function Header() {
       {mobileMenuOpen && (
         <div className="lg:hidden">
           <div className="space-y-1 px-4 pb-4">
-            {navigation.map((item) => (
+            {navData.items.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -85,7 +77,7 @@ export function Header() {
               className="mt-4 w-full bg-primary hover:bg-primary-dark text-primary-foreground"
             >
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Entre em Contato
+                {navData.contactButton}
               </Link>
             </Button>
           </div>

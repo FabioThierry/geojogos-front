@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { games } from "@/lib/data/games";
 import { GamesGrid } from "@/components/games-grid";
+import gamesPageData from "@/lib/data/pages/gamesPage";
 
 export const metadata: Metadata = {
-  title: "Jogos",
-  description:
-    "Explore nossa coleção de jogos educacionais para aulas de Geografia. Jogos digitais, jogos de tabuleiro e experiências de aprendizagem gamificadas.",
+  title: gamesPageData.metadata.title,
+  description: gamesPageData.metadata.description,
 };
 
 export default function GamesPage() {
@@ -15,13 +15,13 @@ export default function GamesPage() {
       <section className="bg-gradient-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h1 className="text-4xl font-bold text-foreground md:text-5xl">
-            Nossos <span className="text-primary">Jogos</span>
+            {gamesPageData.hero.title.split(" ").slice(0, -1).join(" ")}{" "}
+            <span className="text-primary">
+              {gamesPageData.hero.title.split(" ").slice(-1).join(" ")}
+            </span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Explore nossa coleção de jogos educacionais projetados para
-            transformar a educação em Geografia. De experiências digitais
-            interativas a jogos de tabuleiro envolventes, encontre a ferramenta
-            perfeita para sua sala de aula.
+            {gamesPageData.hero.subtitle}
           </p>
         </div>
       </section>

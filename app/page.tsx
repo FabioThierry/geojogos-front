@@ -5,91 +5,19 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { GameCard } from "@/components/ui/game-card";
 import { getFeaturedGames } from "@/lib/data/games";
+import { IconRenderer } from "@/components/ui/icon-renderer";
+import homeData from "@/lib/data/pages/home";
 import {
-  Gamepad2,
-  Puzzle,
-  Sparkles,
-  GraduationCap,
+  Cpu,
+  Box,
+  Users,
+  Globe,
   Target,
   BookOpen,
   Brain,
-  Globe,
   Lightbulb,
   Building2,
 } from "lucide-react";
-
-const services = [
-  {
-    icon: Gamepad2,
-    title: "Jogos Educacionais Digitais Personalizados",
-    description:
-      "Experiências digitais interativas adaptadas ao seu currículo e às necessidades dos alunos.",
-  },
-  {
-    icon: Puzzle,
-    title: "Jogos de Tabuleiro Educacionais",
-    description:
-      "Experiências de aprendizagem tátil que promovem a colaboração e o pensamento espacial.",
-  },
-  {
-    icon: Sparkles,
-    title: "Experiências de Aprendizagem Gamificadas",
-    description:
-      "Transforme lições tradicionais em atividades envolventes baseadas em jogos.",
-  },
-  {
-    icon: GraduationCap,
-    title: "Ferramentas para Professores",
-    description:
-      "Recursos e guias para ajudar educadores a implementar efetivamente a aprendizagem baseada em jogos.",
-  },
-];
-
-const benefits = [
-  {
-    icon: Target,
-    title: "Engajamento",
-    description:
-      "Os jogos capturam a atenção e motivam os alunos a participar ativamente da aprendizagem.",
-  },
-  {
-    icon: BookOpen,
-    title: "Aprendizagem Significativa",
-    description:
-      "A mecânica dos jogos reforça conceitos por meio da prática, feedback e progressão.",
-  },
-  {
-    icon: Globe,
-    title: "Raciocínio Cartográfico",
-    description:
-      "Mapas interativos e desafios espaciais desenvolvem habilidades essenciais de leitura de mapas.",
-  },
-  {
-    icon: Brain,
-    title: "Pensamento Espacial",
-    description:
-      "Os jogos desenvolvem naturalmente a capacidade de visualizar e raciocinar sobre o espaço.",
-  },
-  {
-    icon: Lightbulb,
-    title: "Aprendizagem Interdisciplinar",
-    description:
-      "Os jogos de geografia conectam naturalmente história, ciências, economia e mais.",
-  },
-];
-
-const partners = [
-  { name: "Escola Parceira 1", logo: "/school-logo-educational.jpg" },
-  { name: "Escola Parceira 2", logo: "/university-logo-academic.jpg" },
-  {
-    name: "Escola Parceira 3",
-    logo: "/placeholder.svg?height=60&width=120&text=Partner",
-  },
-  {
-    name: "Escola Parceira 4",
-    logo: "/placeholder.svg?height=60&width=120&text=Institution",
-  },
-];
 
 export default function HomePage() {
   const featuredGames = getFeaturedGames();
@@ -107,13 +35,13 @@ export default function HomePage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="space-y-8">
               <h1 className="text-4xl font-bold leading-tight text-foreground md:text-5xl lg:text-6xl">
-                Jogos Educacionais Criados para{" "}
-                <span className="text-primary">Salas de Aula Reais</span>
+                {homeData.hero.title.split(" ").slice(0, -4).join(" ")}{" "}
+                <span className="text-primary">
+                  {homeData.hero.title.split(" ").slice(-4).join(" ")}
+                </span>
               </h1>
               <p className="text-lg text-muted-foreground md:text-xl">
-                Criamos jogos digitais e analógicos personalizados para
-                transformar o ensino de Geografia nas escolas. Desenvolvidos por
-                educadores, para educadores.
+                {homeData.hero.subtitle}
               </p>
               <div className="flex flex-col gap-4 sm:flex-row">
                 <Button
@@ -121,7 +49,7 @@ export default function HomePage() {
                   size="lg"
                   className="bg-primary hover:bg-primary-dark text-primary-foreground"
                 >
-                  <Link href="/games">Ver Jogos</Link>
+                  <Link href="/games">{homeData.hero.cta.primary}</Link>
                 </Button>
                 <Button
                   asChild
@@ -130,7 +58,7 @@ export default function HomePage() {
                   className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
                 >
                   <Link href="/custom-projects">
-                    Solicitar um Projeto Personalizado
+                    {homeData.hero.cta.secondary}
                   </Link>
                 </Button>
               </div>
@@ -155,34 +83,19 @@ export default function HomePage() {
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeading
-              title="O que é o GeoJogos?"
-              subtitle="Um estúdio de jogos educacionais dedicado a transformar a forma como a Geografia é ensinada e aprendida nas escolas de todo o Brasil."
+              title={homeData.about.title}
+              subtitle={homeData.about.paragraphs[0]}
             />
             <div className="space-y-4 text-muted-foreground">
-              <p>
-                O GeoJogos foi fundado com a crença de que aprender deve ser
-                envolvente, significativo e acessível. Nós combinamos expertise
-                pedagógica com princípios de design de jogos para criar
-                experiências educacionais que realmente funcionam.
-              </p>
-              <p>
-                Nossa equipe trabalha diretamente com professores e escolas para
-                desenvolver jogos que abordam desafios reais da sala de aula.
-                Cada jogo que criamos é fundamentado em pesquisa educacional e
-                adaptado às necessidades curriculares específicas.
-              </p>
-              <p>
-                Seja digital ou analógico, nossos jogos são projetados para
-                desenvolver o pensamento espacial, o raciocínio cartográfico e a
-                literacia geográfica, mantendo os alunos engajados e motivados a
-                aprender.
-              </p>
+              {homeData.about.paragraphs.slice(1).map((paragraph, idx) => (
+                <p key={idx}>{paragraph}</p>
+              ))}
             </div>
             <Button
               asChild
               className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground"
             >
-              <Link href="/about">Saiba Mais Sobre Nós</Link>
+              <Link href="/about">{homeData.about.cta}</Link>
             </Button>
           </div>
           <div className="relative">
@@ -205,25 +118,30 @@ export default function HomePage() {
             subtitle="De simulações digitais a jogos de tabuleiro táteis, desenvolvemos ferramentas educacionais que trazem a Geografia à vida."
             centered
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map((service) => (
-              <Card
-                key={service.title}
-                className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              >
-                <CardContent className="p-6">
-                  <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
-                    <service.icon className="h-6 w-6 text-primary" />
-                  </div>
-                  <h3 className="mb-2 text-lg font-semibold text-foreground">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    {service.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
+            {homeData.services.map((service) => {
+              return (
+                <Card
+                  key={service.title}
+                  className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <CardContent className="p-6">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
+                      <IconRenderer
+                        name={service.iconKey}
+                        className="h-6 w-6 text-primary"
+                      />
+                    </div>
+                    <h3 className="mb-2 text-lg font-semibold text-foreground">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -235,25 +153,27 @@ export default function HomePage() {
           subtitle="Pesquisas mostram que a aprendizagem baseada em jogos melhora significativamente o engajamento e a retenção do conhecimento pelos alunos."
           centered
         />
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit) => (
-            <div
-              key={benefit.title}
-              className="group flex gap-4 rounded-xl p-6 transition-all duration-300 hover:bg-muted"
-            >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
-                <benefit.icon className="h-6 w-6" />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+          {homeData.benefits.map((benefit) => {
+            return (
+              <div
+                key={benefit.title}
+                className="group flex gap-4 rounded-xl p-6 transition-all duration-300 hover:bg-muted"
+              >
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary text-primary-foreground">
+                  <IconRenderer name={benefit.iconKey} className="h-6 w-6" />
+                </div>
+                <div>
+                  <h3 className="mb-2 text-lg font-semibold text-foreground">
+                    {benefit.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {benefit.description}
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">
-                  {benefit.title}
-                </h3>
-                <p className="text-sm text-muted-foreground">
-                  {benefit.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -261,8 +181,8 @@ export default function HomePage() {
       <section className="bg-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
-            title="Jogos em Destaque"
-            subtitle="Explore nossa coleção de jogos educacionais projetados para salas de aula de Geografia."
+            title={homeData.featured.title}
+            subtitle={homeData.featured.subtitle}
             centered
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -277,7 +197,7 @@ export default function HomePage() {
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
             >
-              <Link href="/games">Ver Todos os Jogos</Link>
+              <Link href="/games">{homeData.featured.cta}</Link>
             </Button>
           </div>
         </div>
@@ -291,14 +211,14 @@ export default function HomePage() {
           centered
         />
         <div className="flex flex-wrap items-center justify-center gap-12">
-          {partners.map((partner) => (
+          {homeData.partners.map((partner) => (
             <div
               key={partner.name}
               className="grayscale transition-all duration-300 hover:grayscale-0"
             >
               <Image
                 src={partner.logo || "/placeholder.svg"}
-                alt={partner.name}
+                alt={partner.alt || partner.name}
                 width={120}
                 height={60}
                 className="h-12 w-auto object-contain"
@@ -326,11 +246,10 @@ export default function HomePage() {
       <section className="bg-primary py-20">
         <div className="mx-auto max-w-4xl px-4 text-center lg:px-8">
           <h2 className="text-3xl font-bold text-primary-foreground md:text-4xl">
-            Pronto para Transformar Sua Sala de Aula de Geografia?
+            {homeData.cta.title}
           </h2>
           <p className="mt-4 text-lg text-primary-foreground/80">
-            Vamos criar um jogo personalizado adaptado ao seu currículo, alunos
-            e objetivos educacionais.
+            {homeData.cta.subtitle}
           </p>
           <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
             <Button
@@ -339,9 +258,7 @@ export default function HomePage() {
               variant="secondary"
               className="bg-background text-primary hover:bg-background/90"
             >
-              <Link href="/custom-projects">
-                Iniciar um Projeto Personalizado
-              </Link>
+              <Link href="/custom-projects">{homeData.cta.primary}</Link>
             </Button>
             <Button
               asChild
@@ -349,7 +266,7 @@ export default function HomePage() {
               variant="outline"
               className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
             >
-              <Link href="/contact">Contato</Link>
+              <Link href="/contact">{homeData.cta.secondary}</Link>
             </Button>
           </div>
         </div>
