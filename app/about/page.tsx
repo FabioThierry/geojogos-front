@@ -16,7 +16,7 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-muted via-background to-background py-20">
+      <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>

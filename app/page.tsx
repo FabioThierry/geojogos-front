@@ -25,7 +25,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-primary-muted via-background to-background">
+      <section className="relative overflow-hidden bg-linear-to-br from-primary-muted via-background to-background">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 h-32 w-32 rounded-xl border-4 border-primary rotate-12" />
           <div className="absolute top-40 right-20 h-24 w-24 rounded-xl border-4 border-primary -rotate-6" />

@@ -12,7 +12,7 @@ export default function GamesPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-muted via-background to-background py-20">
+      <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h1 className="text-4xl font-bold text-foreground md:text-5xl">
             {gamesPageData.hero.title.split(" ").slice(0, -1).join(" ")}{" "}

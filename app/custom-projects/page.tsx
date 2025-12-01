@@ -26,7 +26,7 @@ export default function CustomProjectsPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-primary-muted via-background to-background py-20">
+      <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -187,7 +187,7 @@ export default function CustomProjectsPage() {
                 key={example.title}
                 className="overflow-hidden transition-all duration-300 hover:shadow-lg"
               >
-                <div className="relative aspect-[3/2]">
+                <div className="relative aspect-3/2">
                   <Image
                     src={example.image || "/placeholder.svg"}
                     alt={example.title}
