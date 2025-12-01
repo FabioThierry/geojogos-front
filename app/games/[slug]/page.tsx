@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { games, getGameBySlug } from "@/lib/data/games";
+import { getGameBySlug, generateGameStaticParams } from "@/lib/data-access";
 import {
   Target,
   Users,
@@ -21,16 +21,14 @@ interface GamePageProps {
 }
 
 export async function generateStaticParams() {
-  return games.map((game) => ({
-    slug: game.slug,
-  }));
+  return await generateGameStaticParams();
 }
 
 export async function generateMetadata({
   params,
 }: GamePageProps): Promise<Metadata> {
   const { slug } = await params;
-  const game = getGameBySlug(slug);
+  const game = await getGameBySlug(slug);
 
   if (!game) {
     return {
@@ -46,7 +44,7 @@ export async function generateMetadata({
 
 export default async function GamePage({ params }: GamePageProps) {
   const { slug } = await params;
-  const game = getGameBySlug(slug);
+  const game = await getGameBySlug(slug);
 
   if (!game) {
     notFound();

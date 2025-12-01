@@ -1,33 +1,36 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { GameCard } from "@/components/ui/game-card"
-import { Button } from "@/components/ui/button"
-import type { Game } from "@/lib/data/games"
+import { useState } from "react";
+import { GameCard } from "@/components/ui/game-card";
+import { Button } from "@/components/ui/button";
+import type { Game } from "@/lib/data/types";
 
 interface GamesGridProps {
-  games: Game[]
+  games: Game[];
 }
 
-type FilterType = "all" | "digital" | "boardgame"
-type FilterCategory = "all" | "geography" | "interdisciplinary"
+type FilterType = "all" | "digital" | "boardgame";
+type FilterCategory = "all" | "geography" | "interdisciplinary";
 
 export function GamesGrid({ games }: GamesGridProps) {
-  const [typeFilter, setTypeFilter] = useState<FilterType>("all")
-  const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("all")
+  const [typeFilter, setTypeFilter] = useState<FilterType>("all");
+  const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("all");
 
   const filteredGames = games.filter((game) => {
-    if (typeFilter !== "all" && game.type !== typeFilter) return false
-    if (categoryFilter !== "all" && game.category !== categoryFilter) return false
-    return true
-  })
+    if (typeFilter !== "all" && game.type !== typeFilter) return false;
+    if (categoryFilter !== "all" && game.category !== categoryFilter)
+      return false;
+    return true;
+  });
 
   return (
     <div>
       {/* Filters */}
       <div className="mb-8 flex flex-wrap gap-4">
         <div className="space-y-2">
-          <span className="text-sm font-medium text-muted-foreground">Type</span>
+          <span className="text-sm font-medium text-muted-foreground">
+            Type
+          </span>
           <div className="flex gap-2">
             <Button
               variant={typeFilter === "all" ? "default" : "outline"}
@@ -68,7 +71,9 @@ export function GamesGrid({ games }: GamesGridProps) {
           </div>
         </div>
         <div className="space-y-2">
-          <span className="text-sm font-medium text-muted-foreground">Category</span>
+          <span className="text-sm font-medium text-muted-foreground">
+            Category
+          </span>
           <div className="flex gap-2">
             <Button
               variant={categoryFilter === "all" ? "default" : "outline"}
@@ -95,7 +100,9 @@ export function GamesGrid({ games }: GamesGridProps) {
               Geography
             </Button>
             <Button
-              variant={categoryFilter === "interdisciplinary" ? "default" : "outline"}
+              variant={
+                categoryFilter === "interdisciplinary" ? "default" : "outline"
+              }
               size="sm"
               onClick={() => setCategoryFilter("interdisciplinary")}
               className={
@@ -112,7 +119,8 @@ export function GamesGrid({ games }: GamesGridProps) {
 
       {/* Results Count */}
       <p className="mb-6 text-sm text-muted-foreground">
-        Showing {filteredGames.length} game{filteredGames.length !== 1 ? "s" : ""}
+        Showing {filteredGames.length} game
+        {filteredGames.length !== 1 ? "s" : ""}
       </p>
 
       {/* Games Grid */}
@@ -124,13 +132,15 @@ export function GamesGrid({ games }: GamesGridProps) {
         </div>
       ) : (
         <div className="py-12 text-center">
-          <p className="text-muted-foreground">No games found matching your filters.</p>
+          <p className="text-muted-foreground">
+            No games found matching your filters.
+          </p>
           <Button
             variant="outline"
             className="mt-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
             onClick={() => {
-              setTypeFilter("all")
-              setCategoryFilter("all")
+              setTypeFilter("all");
+              setCategoryFilter("all");
             }}
           >
             Clear Filters
@@ -138,5 +148,5 @@ export function GamesGrid({ games }: GamesGridProps) {
         </div>
       )}
     </div>
-  )
+  );
 }

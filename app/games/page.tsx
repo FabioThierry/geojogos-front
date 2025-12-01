@@ -1,14 +1,19 @@
 import type { Metadata } from "next";
-import { games } from "@/lib/data/games";
+import { getGamesPageData, getAllGames } from "@/lib/data-access";
 import { GamesGrid } from "@/components/games-grid";
-import gamesPageData from "@/lib/data/pages/gamesPage";
 
-export const metadata: Metadata = {
-  title: gamesPageData.metadata.title,
-  description: gamesPageData.metadata.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const gamesPageData = await getGamesPageData();
 
-export default function GamesPage() {
+  return {
+    title: gamesPageData.metadata.title,
+    description: gamesPageData.metadata.description,
+  };
+}
+
+export default async function GamesPage() {
+  const gamesPageData = await getGamesPageData();
+  const games = await getAllGames();
   return (
     <div>
       {/* Hero */}

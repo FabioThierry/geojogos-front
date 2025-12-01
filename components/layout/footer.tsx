@@ -1,9 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, MapPin, Linkedin, Instagram, Youtube } from "lucide-react";
-import footerData from "@/lib/data/shared/footer";
+import type { Footer } from "@/lib/data/types";
 
-export function Footer() {
+interface FooterProps {
+  footerData: Footer;
+}
+
+export function Footer({ footerData }: FooterProps) {
   return (
     <footer className="border-t border-border bg-muted">
       <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8">

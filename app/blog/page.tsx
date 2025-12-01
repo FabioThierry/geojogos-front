@@ -1,15 +1,20 @@
 import type { Metadata } from "next";
-import { blogPosts } from "@/lib/data/blog";
+import { getAllBlogPosts, getBlogMetaPageData } from "@/lib/data-access";
 import { BlogCard } from "@/components/ui/blog-card";
 import { SectionHeading } from "@/components/ui/section-heading";
-import blogMetaData from "@/lib/data/pages/blogMeta";
 
-export const metadata: Metadata = {
-  title: blogMetaData.metadata.title,
-  description: blogMetaData.metadata.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const blogMetaData = await getBlogMetaPageData();
 
-export default function BlogPage() {
+  return {
+    title: blogMetaData.metadata.title,
+    description: blogMetaData.metadata.description,
+  };
+}
+
+export default async function BlogPage() {
+  const blogMetaData = await getBlogMetaPageData();
+  const blogPosts = await getAllBlogPosts();
   const titleParts = blogMetaData.hero.title.split(" ");
   const lastWord = titleParts.pop();
 

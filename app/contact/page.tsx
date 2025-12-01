@@ -9,12 +9,16 @@ import {
   GraduationCap,
 } from "lucide-react";
 import { IconRenderer } from "@/components/ui/icon-renderer";
-import contactData from "@/lib/data/pages/contact";
+import { getContactPageData } from "@/lib/data-access";
 
-export const metadata: Metadata = {
-  title: contactData.metadata.title,
-  description: contactData.metadata.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const contactData = await getContactPageData();
+
+  return {
+    title: contactData.metadata.title,
+    description: contactData.metadata.description,
+  };
+}
 
 const contactReasons = [
   {
@@ -37,7 +41,8 @@ const contactReasons = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const contactData = await getContactPageData();
   const titleParts = contactData.hero.title.split(" ");
   const lastWord = titleParts.pop();
 

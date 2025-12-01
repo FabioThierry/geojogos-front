@@ -15,14 +15,19 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { IconRenderer } from "@/components/ui/icon-renderer";
-import customProjectsData from "@/lib/data/pages/customProjects";
+import { getCustomProjectsPageData } from "@/lib/data-access";
 
-export const metadata: Metadata = {
-  title: customProjectsData.metadata.title,
-  description: customProjectsData.metadata.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const customProjectsData = await getCustomProjectsPageData();
 
-export default function CustomProjectsPage() {
+  return {
+    title: customProjectsData.metadata.title,
+    description: customProjectsData.metadata.description,
+  };
+}
+
+export default async function CustomProjectsPage() {
+  const customProjectsData = await getCustomProjectsPageData();
   return (
     <div>
       {/* Hero */}

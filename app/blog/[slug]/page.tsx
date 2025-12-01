@@ -4,8 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { blogPosts, getBlogPostBySlug, getRecentPosts } from "@/lib/data/blog";
 import { BlogCard } from "@/components/ui/blog-card";
+import {
+  getBlogPostBySlug,
+  getRecentBlogPosts,
+  generateBlogStaticParams,
+} from "@/lib/data-access";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 
 interface BlogPostPageProps {
@@ -13,16 +17,14 @@ interface BlogPostPageProps {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
-    slug: post.slug,
-  }));
+  return await generateBlogStaticParams();
 }
 
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     return {
@@ -38,13 +40,15 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
-  const recentPosts = getRecentPosts(3).filter((p) => p.slug !== slug);
+  const recentPosts = (await getRecentBlogPosts(3)).filter(
+    (p) => p.slug !== slug
+  );
   const formattedDate = new Date(post.publishedAt).toLocaleDateString("pt-BR", {
     year: "numeric",
     month: "long",

@@ -4,9 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { GameCard } from "@/components/ui/game-card";
-import { getFeaturedGames } from "@/lib/data/games";
+import { getHomePageData, getFeaturedGames } from "@/lib/data-access";
 import { IconRenderer } from "@/components/ui/icon-renderer";
-import homeData from "@/lib/data/pages/home";
 import {
   Cpu,
   Box,
@@ -19,8 +18,9 @@ import {
   Building2,
 } from "lucide-react";
 
-export default function HomePage() {
-  const featuredGames = getFeaturedGames();
+export default async function HomePage() {
+  const homeData = await getHomePageData();
+  const featuredGames = await getFeaturedGames();
 
   return (
     <div>

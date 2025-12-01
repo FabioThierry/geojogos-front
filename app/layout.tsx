@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { getNavigationData, getFooterData } from "@/lib/data-access";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
@@ -61,17 +62,20 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const navData = await getNavigationData();
+  const footerData = await getFooterData();
+
   return (
     <html lang="pt-BR" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="font-sans antialiased">
-        <Header />
+        <Header navData={navData} />
         <main className="min-h-screen">{children}</main>
-        <Footer />
+        <Footer footerData={footerData} />
         <Analytics />
       </body>
     </html>

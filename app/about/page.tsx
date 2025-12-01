@@ -5,14 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { IconRenderer } from "@/components/ui/icon-renderer";
-import aboutData from "@/lib/data/pages/about";
+import { getAboutPageData } from "@/lib/data-access";
 
-export const metadata: Metadata = {
-  title: aboutData.metadata.title,
-  description: aboutData.metadata.description,
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const aboutData = await getAboutPageData();
 
-export default function AboutPage() {
+  return {
+    title: aboutData.metadata.title,
+    description: aboutData.metadata.description,
+  };
+}
+
+export default async function AboutPage() {
+  const aboutData = await getAboutPageData();
   return (
     <div>
       {/* Hero */}

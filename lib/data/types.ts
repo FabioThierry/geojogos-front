@@ -1,6 +1,38 @@
 // Tipos reutilizáveis para os dados do site
 export type IconKey = string;
 
+// ===== Games & Blog Content Types =====
+export interface Game {
+  id: string;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  fullDescription: string;
+  coverImage: string;
+  type: "digital" | "boardgame";
+  category: "geography" | "interdisciplinary";
+  targetLevel: string;
+  educationalObjectives: string[];
+  skillsDeveloped: string[];
+  howToUse: string;
+  featured: boolean;
+}
+
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  content: string;
+  coverImage: string;
+  author: string;
+  publishedAt: string;
+  category: string;
+  tags: string[];
+}
+
+// ===== Navigation & Layout Types =====
+
 export interface NavItem {
   name: string;
   href: string;
