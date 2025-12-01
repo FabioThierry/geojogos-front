@@ -12,7 +12,7 @@ interface GameCardProps {
 export function GameCard({ game }: GameCardProps) {
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-      <div className="relative aspect-[3/2] overflow-hidden">
+      <div className="relative aspect-3/2 overflow-hidden">
         <Image
           src={game.coverImage || "/placeholder.svg"}
           alt={game.title}
