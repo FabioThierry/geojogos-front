@@ -1,22 +1,22 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import Image from "next/image"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Games", href: "/games" },
-  { name: "Custom Projects", href: "/custom-projects" },
+  { name: "Sobre", href: "/about" },
+  { name: "Jogos", href: "/games" },
+  { name: "Projetos Personalizados", href: "/custom-projects" },
   { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-]
+  { name: "Contato", href: "/contact" },
+];
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,7 +24,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/images/geojogos-20-283-29.png"
-            alt="GeoJogos Logo"
+            alt="Logo GeoJogos"
             width={48}
             height={48}
             className="h-12 w-auto"
@@ -43,15 +43,26 @@ export function Header() {
               {item.name}
             </Link>
           ))}
-          <Button asChild className="bg-primary hover:bg-primary-dark text-primary-foreground">
-            <Link href="/contact">Get in Touch</Link>
+          <Button
+            asChild
+            className="bg-primary hover:bg-primary-dark text-primary-foreground"
+          >
+            <Link href="/contact">Entre em Contato</Link>
           </Button>
         </div>
 
         {/* Mobile Menu Button */}
-        <button type="button" className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-          <span className="sr-only">Toggle menu</span>
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        <button
+          type="button"
+          className="lg:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
+          <span className="sr-only">Alternar menu</span>
+          {mobileMenuOpen ? (
+            <X className="h-6 w-6" />
+          ) : (
+            <Menu className="h-6 w-6" />
+          )}
         </button>
       </nav>
 
@@ -69,14 +80,17 @@ export function Header() {
                 {item.name}
               </Link>
             ))}
-            <Button asChild className="mt-4 w-full bg-primary hover:bg-primary-dark text-primary-foreground">
+            <Button
+              asChild
+              className="mt-4 w-full bg-primary hover:bg-primary-dark text-primary-foreground"
+            >
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                Get in Touch
+                Entre em Contato
               </Link>
             </Button>
           </div>
         </div>
       )}
     </header>
-  )
+  );
 }

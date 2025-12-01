@@ -1,55 +1,69 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { games, getGameBySlug } from "@/lib/data/games"
-import { Target, Users, Monitor, Puzzle, BookOpen, Brain, ArrowLeft } from "lucide-react"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { games, getGameBySlug } from "@/lib/data/games";
+import {
+  Target,
+  Users,
+  Monitor,
+  Puzzle,
+  BookOpen,
+  Brain,
+  ArrowLeft,
+} from "lucide-react";
 
 interface GamePageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
   return games.map((game) => ({
     slug: game.slug,
-  }))
+  }));
 }
 
-export async function generateMetadata({ params }: GamePageProps): Promise<Metadata> {
-  const { slug } = await params
-  const game = getGameBySlug(slug)
+export async function generateMetadata({
+  params,
+}: GamePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const game = getGameBySlug(slug);
 
   if (!game) {
     return {
-      title: "Game Not Found",
-    }
+      title: "Jogo Não Encontrado",
+    };
   }
 
   return {
     title: game.title,
     description: game.shortDescription,
-  }
+  };
 }
 
 export default async function GamePage({ params }: GamePageProps) {
-  const { slug } = await params
-  const game = getGameBySlug(slug)
+  const { slug } = await params;
+  const game = getGameBySlug(slug);
 
   if (!game) {
-    notFound()
+    notFound();
   }
 
   return (
     <div>
       {/* Back Button */}
       <div className="mx-auto max-w-7xl px-4 pt-8 lg:px-8">
-        <Button asChild variant="ghost" className="gap-2 text-muted-foreground hover:text-primary">
+        <Button
+          asChild
+          variant="ghost"
+          className="gap-2 text-muted-foreground hover:text-primary"
+        >
           <Link href="/games">
             <ArrowLeft className="h-4 w-4" />
-            Back to Games
+            Voltar para Jogos
           </Link>
         </Button>
       </div>
@@ -69,21 +83,32 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="absolute top-4 left-4 flex gap-2">
               <Badge
                 className={
-                  game.type === "digital" ? "bg-primary text-primary-foreground" : "bg-foreground text-background"
+                  game.type === "digital"
+                    ? "bg-primary text-primary-foreground"
+                    : "bg-foreground text-background"
                 }
               >
-                {game.type === "digital" ? "Digital" : "Board Game"}
+                {game.type === "digital" ? "Digital" : "Jogo de Tabuleiro"}
               </Badge>
-              <Badge variant="outline" className="bg-background/90 text-foreground">
-                {game.category === "geography" ? "Geography" : "Interdisciplinary"}
+              <Badge
+                variant="outline"
+                className="bg-background/90 text-foreground"
+              >
+                {game.category === "geography"
+                  ? "Geografia"
+                  : "Interdisciplinar"}
               </Badge>
             </div>
           </div>
 
           {/* Game Info */}
           <div>
-            <h1 className="text-3xl font-bold text-foreground md:text-4xl">{game.title}</h1>
-            <p className="mt-4 text-lg text-muted-foreground">{game.shortDescription}</p>
+            <h1 className="text-3xl font-bold text-foreground md:text-4xl">
+              {game.title}
+            </h1>
+            <p className="mt-4 text-lg text-muted-foreground">
+              {game.shortDescription}
+            </p>
 
             {/* Quick Info Cards */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -91,8 +116,10 @@ export default async function GamePage({ params }: GamePageProps) {
                 <CardContent className="flex items-center gap-3 p-4">
                   <Users className="h-5 w-5 text-primary" />
                   <div>
-                    <p className="text-xs text-muted-foreground">Target Level</p>
-                    <p className="font-medium text-foreground">{game.targetLevel}</p>
+                    <p className="text-xs text-muted-foreground">Nível Alvo</p>
+                    <p className="font-medium text-foreground">
+                      {game.targetLevel}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -104,9 +131,11 @@ export default async function GamePage({ params }: GamePageProps) {
                     <Puzzle className="h-5 w-5 text-primary" />
                   )}
                   <div>
-                    <p className="text-xs text-muted-foreground">Format</p>
+                    <p className="text-xs text-muted-foreground">Formato</p>
                     <p className="font-medium text-foreground">
-                      {game.type === "digital" ? "Digital Game" : "Board Game"}
+                      {game.type === "digital"
+                        ? "Jogo Digital"
+                        : "Jogo de Tabuleiro"}
                     </p>
                   </div>
                 </CardContent>
@@ -120,7 +149,9 @@ export default async function GamePage({ params }: GamePageProps) {
                 size="lg"
                 className="w-full bg-primary hover:bg-primary-dark text-primary-foreground sm:w-auto"
               >
-                <Link href="/custom-projects">Request a Custom Version of This Game</Link>
+                <Link href="/custom-projects">
+                  Solicitar uma Versão Personalizada deste Jogo
+                </Link>
               </Button>
             </div>
           </div>
@@ -130,8 +161,12 @@ export default async function GamePage({ params }: GamePageProps) {
       {/* Full Description */}
       <section className="bg-muted py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">About This Game</h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">{game.fullDescription}</p>
+          <h2 className="text-2xl font-bold text-foreground">
+            Sobre este Jogo
+          </h2>
+          <p className="mt-4 text-muted-foreground leading-relaxed">
+            {game.fullDescription}
+          </p>
         </div>
       </section>
 
@@ -144,11 +179,16 @@ export default async function GamePage({ params }: GamePageProps) {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <Target className="h-5 w-5 text-primary-foreground" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Educational Objectives</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                Objetivos Educacionais
+              </h2>
             </div>
             <ul className="space-y-3">
               {game.educationalObjectives.map((objective, index) => (
-                <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                <li
+                  key={index}
+                  className="flex items-start gap-3 text-muted-foreground"
+                >
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-muted text-xs font-medium text-primary">
                     {index + 1}
                   </span>
@@ -164,11 +204,17 @@ export default async function GamePage({ params }: GamePageProps) {
               <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
                 <Brain className="h-5 w-5 text-primary-foreground" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">Skills Developed</h2>
+              <h2 className="text-2xl font-bold text-foreground">
+                Habilidades Desenvolvidas
+              </h2>
             </div>
             <div className="flex flex-wrap gap-2">
               {game.skillsDeveloped.map((skill, index) => (
-                <Badge key={index} variant="outline" className="border-primary text-primary px-3 py-1">
+                <Badge
+                  key={index}
+                  variant="outline"
+                  className="border-primary text-primary px-3 py-1"
+                >
                   {skill}
                 </Badge>
               ))}
@@ -184,22 +230,35 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
               <BookOpen className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground">How Teachers Can Use It</h2>
+            <h2 className="text-2xl font-bold text-foreground">
+              Como os Professores Podem Usar
+            </h2>
           </div>
-          <p className="text-muted-foreground leading-relaxed max-w-4xl">{game.howToUse}</p>
+          <p className="text-muted-foreground leading-relaxed max-w-4xl">
+            {game.howToUse}
+          </p>
         </div>
       </section>
 
       {/* CTA Section */}
       <section className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
-        <h2 className="text-3xl font-bold text-foreground">Want This Game Customized for Your School?</h2>
+        <h2 className="text-3xl font-bold text-foreground">
+          Quer Este Jogo Personalizado para Sua Escola?
+        </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          We can adapt this game to your specific curriculum, local geography, and educational objectives.
+          Podemos adaptar este jogo para seu currículo específico, geografia
+          local e objetivos educacionais.
         </p>
-        <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground">
-          <Link href="/custom-projects">Request a Custom Version</Link>
+        <Button
+          asChild
+          size="lg"
+          className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground"
+        >
+          <Link href="/custom-projects">
+            Solicitar uma Versão Personalizada
+          </Link>
         </Button>
       </section>
     </div>
-  )
+  );
 }

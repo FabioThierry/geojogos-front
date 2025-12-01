@@ -1,110 +1,131 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { SectionHeading } from "@/components/ui/section-heading"
-import { BookOpen, MapPin, Users, Target, Monitor, Puzzle, CheckCircle, ArrowRight } from "lucide-react"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeading } from "@/components/ui/section-heading";
+import {
+  BookOpen,
+  MapPin,
+  Users,
+  Target,
+  Monitor,
+  Puzzle,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Custom Projects",
+  title: "Projetos Personalizados",
   description:
-    "Custom educational game development for schools and teachers. We create games adapted to your curriculum, local reality, and educational objectives.",
-}
+    "Desenvolvimento de jogos educacionais personalizados para escolas e professores. Criamos jogos adaptados ao seu currículo, realidade local e objetivos educacionais.",
+};
 
 const adaptations = [
   {
     icon: BookOpen,
-    title: "School Curriculum",
-    description: "Games aligned with your specific curriculum requirements and learning standards.",
+    title: "Currículo da Escola",
+    description:
+      "Jogos alinhados com seus requisitos curriculares específicos e padrões de aprendizagem.",
   },
   {
     icon: MapPin,
-    title: "Local Reality",
-    description: "Content that reflects your region's geography, landmarks, and cultural context.",
+    title: "Realidade Local",
+    description:
+      "Conteúdo que reflete a geografia, marcos e contexto cultural de sua região.",
   },
   {
     icon: Users,
-    title: "Student Age Group",
-    description: "Difficulty and complexity tailored to your students' developmental level.",
+    title: "Faixa Etária dos Alunos",
+    description:
+      "Dificuldade e complexidade adaptadas ao nível de desenvolvimento de seus alunos.",
   },
   {
     icon: Target,
-    title: "Educational Objectives",
-    description: "Game mechanics designed to achieve your specific learning goals.",
+    title: "Objetivos Educacionais",
+    description:
+      "Mecânicas de jogo projetadas para alcançar seus objetivos de aprendizagem específicos.",
   },
-]
+];
 
 const formats = [
   {
     icon: Monitor,
-    title: "Digital Games",
+    title: "Jogos Digitais",
     features: [
-      "Interactive web-based or app experiences",
-      "Automatic progress tracking",
-      "Adaptive difficulty",
-      "Multimedia content integration",
-      "Works on computers and tablets",
+      "Experiências web interativas ou baseadas em aplicativos",
+      "Rastreamento automático de progresso",
+      "Dificuldade adaptativa",
+      "Integração de conteúdo multimídia",
+      "Funciona em computadores e tablets",
     ],
   },
   {
     icon: Puzzle,
-    title: "Board Games",
+    title: "Jogos de Tabuleiro",
     features: [
-      "Physical components and materials",
-      "Face-to-face collaboration",
-      "Tactile learning experiences",
-      "No technology required",
-      "Includes teacher guide",
+      "Componentes e materiais físicos",
+      "Colaboração face a face",
+      "Experiências de aprendizagem tátil",
+      "Sem necessidade de tecnologia",
+      "Inclui guia para professor",
     ],
   },
-]
+];
 
 const examples = [
   {
-    title: "Regional Geography Quiz",
-    description: "A customized quiz game featuring your state's municipalities, landmarks, and geographic features.",
+    title: "Quiz Regional de Geografia",
+    description:
+      "Um jogo de quiz personalizado com os municípios, marcos e características geográficas do seu estado.",
     image: "/digital-geography-quiz-game-brazil-map.jpg",
   },
   {
-    title: "Local Climate Board Game",
-    description: "A board game exploring climate patterns and environmental challenges specific to your region.",
+    title: "Jogo de Tabuleiro de Clima Local",
+    description:
+      "Um jogo de tabuleiro explorando padrões climáticos e desafios ambientais específicos de sua região.",
     image: "/educational-board-game-climate-zones-world-map.jpg",
   },
   {
-    title: "City Planning Simulation",
-    description: "A digital simulation using real data from your city or neighborhood for urban geography lessons.",
+    title: "Simulação de Planejamento Urbano",
+    description:
+      "Uma simulação digital usando dados reais de sua cidade ou bairro para lições de geografia urbana.",
     image: "/city-planning-simulation-game-urban-development.jpg",
   },
-]
+];
 
 const processSteps = [
   {
     step: 1,
-    title: "Initial Consultation",
-    description: "We discuss your educational needs, curriculum requirements, and project goals.",
+    title: "Consulta Inicial",
+    description:
+      "Discutimos suas necessidades educacionais, requisitos curriculares e objetivos do projeto.",
   },
   {
     step: 2,
-    title: "Proposal & Planning",
-    description: "We create a detailed proposal including game concept, timeline, and deliverables.",
+    title: "Proposta e Planejamento",
+    description:
+      "Criamos uma proposta detalhada incluindo conceito do jogo, cronograma e entregas.",
   },
   {
     step: 3,
-    title: "Development",
-    description: "Our team designs and develops the game with regular check-ins and feedback sessions.",
+    title: "Desenvolvimento",
+    description:
+      "Nossa equipe projeta e desenvolve o jogo com check-ins regulares e sessões de feedback.",
   },
   {
     step: 4,
-    title: "Testing & Refinement",
-    description: "We test the game with real students and incorporate feedback for improvements.",
+    title: "Testes e Refinamento",
+    description:
+      "Testamos o jogo com alunos reais e incorporamos feedback para melhorias.",
   },
   {
     step: 5,
-    title: "Delivery & Support",
-    description: "You receive the final game with teacher guides and ongoing support.",
+    title: "Entrega e Suporte",
+    description:
+      "Você recebe o jogo final com guias para professores e suporte contínuo.",
   },
-]
+];
 
 export default function CustomProjectsPage() {
   return (
@@ -115,20 +136,28 @@ export default function CustomProjectsPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <h1 className="text-4xl font-bold text-foreground md:text-5xl">
-                Custom <span className="text-primary">Game Development</span> for Schools
+                Desenvolvimento de Jogos{" "}
+                <span className="text-primary">Personalizados</span> para
+                Escolas
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
-                Every classroom is unique. We create custom educational games tailored to your specific curriculum,
-                students, and educational goals. Whether digital or analog, we design games that work for your reality.
+                Cada sala de aula é única. Criamos jogos educacionais
+                personalizados adaptados ao seu currículo específico, alunos e
+                objetivos educacionais. Seja digital ou analógico, projetamos
+                jogos que funcionam para sua realidade.
               </p>
-              <Button asChild size="lg" className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground">
-                <Link href="/contact">Start a Custom Project</Link>
+              <Button
+                asChild
+                size="lg"
+                className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground"
+              >
+                <Link href="/contact">Iniciar um Projeto Personalizado</Link>
               </Button>
             </div>
             <div className="relative">
               <Image
                 src="/teacher-customizing-educational-materials-local-ma.jpg"
-                alt="Custom game development process"
+                alt="Processo de desenvolvimento de jogos personalizados"
                 width={500}
                 height={400}
                 className="rounded-2xl shadow-xl"
@@ -141,8 +170,8 @@ export default function CustomProjectsPage() {
       {/* What We Adapt */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
         <SectionHeading
-          title="Customized for Your Needs"
-          subtitle="We adapt every aspect of the game to fit your educational context"
+          title="Personalizado para Suas Necessidades"
+          subtitle="Adaptamos cada aspecto do jogo para se adequar ao seu contexto educacional"
           centered
         />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -155,8 +184,12 @@ export default function CustomProjectsPage() {
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary">
                   <item.icon className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {item.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -167,8 +200,8 @@ export default function CustomProjectsPage() {
       <section className="bg-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
-            title="Digital & Analog Formats"
-            subtitle="Choose the format that works best for your classroom"
+            title="Formatos Digital e Analógico"
+            subtitle="Escolha o formato que melhor funciona para sua sala de aula"
             centered
           />
           <div className="grid gap-8 md:grid-cols-2">
@@ -183,7 +216,10 @@ export default function CustomProjectsPage() {
                   </div>
                   <ul className="p-6 space-y-3">
                     {format.features.map((feature, index) => (
-                      <li key={index} className="flex items-start gap-3 text-muted-foreground">
+                      <li
+                        key={index}
+                        className="flex items-start gap-3 text-muted-foreground"
+                      >
                         <CheckCircle className="h-5 w-5 shrink-0 text-primary" />
                         {feature}
                       </li>
@@ -198,14 +234,20 @@ export default function CustomProjectsPage() {
 
       {/* Process */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <SectionHeading title="How It Works" subtitle="Our collaborative development process" centered />
+        <SectionHeading
+          title="Como Funciona"
+          subtitle="Nosso processo colaborativo de desenvolvimento"
+          centered
+        />
         <div className="relative">
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border lg:left-1/2" />
           <div className="space-y-8">
             {processSteps.map((item, index) => (
               <div
                 key={item.step}
-                className={`relative flex gap-8 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}
+                className={`relative flex gap-8 ${
+                  index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                }`}
               >
                 <div className="hidden lg:block lg:w-1/2" />
                 <div className="absolute left-8 lg:left-1/2 -translate-x-1/2 flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
@@ -214,8 +256,12 @@ export default function CustomProjectsPage() {
                 <div className="ml-16 lg:ml-0 lg:w-1/2 lg:px-8">
                   <Card>
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
-                      <p className="mt-2 text-muted-foreground">{item.description}</p>
+                      <h3 className="text-lg font-semibold text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-muted-foreground">
+                        {item.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </div>
@@ -228,16 +274,32 @@ export default function CustomProjectsPage() {
       {/* Examples */}
       <section className="bg-primary-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <SectionHeading title="Example Applications" subtitle="Ideas for custom game projects" centered />
+          <SectionHeading
+            title="Aplicações de Exemplo"
+            subtitle="Ideias para projetos de jogos personalizados"
+            centered
+          />
           <div className="grid gap-6 md:grid-cols-3">
             {examples.map((example) => (
-              <Card key={example.title} className="overflow-hidden transition-all duration-300 hover:shadow-lg">
+              <Card
+                key={example.title}
+                className="overflow-hidden transition-all duration-300 hover:shadow-lg"
+              >
                 <div className="relative aspect-[3/2]">
-                  <Image src={example.image || "/placeholder.svg"} alt={example.title} fill className="object-cover" />
+                  <Image
+                    src={example.image || "/placeholder.svg"}
+                    alt={example.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
                 <CardContent className="p-5">
-                  <h3 className="mb-2 font-semibold text-foreground">{example.title}</h3>
-                  <p className="text-sm text-muted-foreground">{example.description}</p>
+                  <h3 className="mb-2 font-semibold text-foreground">
+                    {example.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {example.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
@@ -249,18 +311,23 @@ export default function CustomProjectsPage() {
       <section className="bg-primary py-20">
         <div className="mx-auto max-w-4xl px-4 text-center lg:px-8">
           <h2 className="text-3xl font-bold text-primary-foreground md:text-4xl">
-            Ready to Start Your Custom Project?
+            Pronto para Iniciar Seu Projeto Personalizado?
           </h2>
           <p className="mt-4 text-lg text-primary-foreground/80">
-            Tell us about your educational needs and let&apos;s create something amazing for your students.
+            Conte-nos sobre suas necessidades educacionais e vamos criar algo
+            incrível para seus alunos.
           </p>
-          <Button asChild size="lg" className="mt-8 bg-background text-primary hover:bg-background/90">
+          <Button
+            asChild
+            size="lg"
+            className="mt-8 bg-background text-primary hover:bg-background/90"
+          >
             <Link href="/contact" className="inline-flex items-center gap-2">
-              Contact Us <ArrowRight className="h-4 w-4" />
+              Entre em Contato <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -1,28 +1,28 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Textarea } from "@/components/ui/textarea"
-import { CheckCircle } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { CheckCircle } from "lucide-react";
 
 export function ContactForm() {
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsLoading(true)
+    e.preventDefault();
+    setIsLoading(true);
 
     // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    await new Promise((resolve) => setTimeout(resolve, 1000));
 
-    setIsLoading(false)
-    setIsSubmitted(true)
-  }
+    setIsLoading(false);
+    setIsSubmitted(true);
+  };
 
   if (isSubmitted) {
     return (
@@ -30,28 +30,32 @@ export function ContactForm() {
         <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary-muted">
           <CheckCircle className="h-8 w-8 text-primary" />
         </div>
-        <h3 className="mt-4 text-xl font-semibold text-foreground">Message Sent!</h3>
-        <p className="mt-2 text-muted-foreground">Thank you for contacting us. We&apos;ll get back to you soon.</p>
+        <h3 className="mt-4 text-xl font-semibold text-foreground">
+          Mensagem Enviada!
+        </h3>
+        <p className="mt-2 text-muted-foreground">
+          Obrigado por nos contatar. Retornaremos em breve.
+        </p>
         <Button
           variant="outline"
           className="mt-6 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
           onClick={() => setIsSubmitted(false)}
         >
-          Send Another Message
+          Enviar Outra Mensagem
         </Button>
       </div>
-    )
+    );
   }
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">Nome</Label>
           <Input
             id="name"
             name="name"
-            placeholder="Your name"
+            placeholder="Seu nome"
             required
             className="border-border focus:border-primary focus:ring-primary"
           />
@@ -62,28 +66,28 @@ export function ContactForm() {
             id="email"
             name="email"
             type="email"
-            placeholder="your@email.com"
+            placeholder="seu@email.com"
             required
             className="border-border focus:border-primary focus:ring-primary"
           />
         </div>
       </div>
       <div className="space-y-2">
-        <Label htmlFor="subject">Subject</Label>
+        <Label htmlFor="subject">Assunto</Label>
         <Input
           id="subject"
           name="subject"
-          placeholder="How can we help?"
+          placeholder="Como podemos ajudar?"
           required
           className="border-border focus:border-primary focus:ring-primary"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="message">Message</Label>
+        <Label htmlFor="message">Mensagem</Label>
         <Textarea
           id="message"
           name="message"
-          placeholder="Tell us about your project or question..."
+          placeholder="Conte-nos sobre seu projeto ou pergunta..."
           rows={6}
           required
           className="border-border focus:border-primary focus:ring-primary resize-none"
@@ -95,8 +99,8 @@ export function ContactForm() {
         className="w-full bg-primary hover:bg-primary-dark text-primary-foreground"
         disabled={isLoading}
       >
-        {isLoading ? "Sending..." : "Send Message"}
+        {isLoading ? "Enviando..." : "Enviar Mensagem"}
       </Button>
     </form>
-  )
+  );
 }

@@ -1,69 +1,84 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { SectionHeading } from "@/components/ui/section-heading"
-import { Target, Eye, Heart, Users, BookOpen, Gamepad2, Globe } from "lucide-react"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { SectionHeading } from "@/components/ui/section-heading";
+import {
+  Target,
+  Eye,
+  Heart,
+  Users,
+  BookOpen,
+  Gamepad2,
+  Globe,
+} from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "Sobre",
   description:
-    "Learn about GeoJogos - our history, mission, and commitment to transforming Geography education through game-based learning.",
-}
+    "Conheça a GeoJogos - nossa história, missão e compromisso em transformar o ensino de Geografia através da aprendizagem baseada em jogos.",
+};
 
 const values = [
   {
     icon: BookOpen,
-    title: "Educational Excellence",
+    title: "Excelência Educacional",
     description:
-      "Every game we create is grounded in pedagogical research and designed to achieve specific learning outcomes.",
+      "Todo jogo que criamos é fundamentado em pesquisa pedagógica e projetado para alcançar objetivos de aprendizagem específicos.",
   },
   {
     icon: Users,
-    title: "Teacher-Centered Design",
-    description: "We work alongside educators to understand real classroom challenges and develop practical solutions.",
+    title: "Design Centrado no Professor",
+    description:
+      "Trabalhamos junto aos educadores para entender os desafios reais da sala de aula e desenvolver soluções práticas.",
   },
   {
     icon: Gamepad2,
-    title: "Meaningful Play",
+    title: "Brincadeira Significativa",
     description:
-      "Games should be engaging AND educational. We never sacrifice learning for entertainment or vice versa.",
+      "Os jogos devem ser envolventes E educacionais. Nunca sacrificamos o aprendizado pelo entretenimento ou vice-versa.",
   },
   {
     icon: Globe,
-    title: "Local Relevance",
-    description: "Our games reflect Brazilian geography and can be customized to address regional and local contexts.",
+    title: "Relevância Local",
+    description:
+      "Nossos jogos refletem a geografia brasileira e podem ser personalizados para abordar contextos regionais e locais.",
   },
-]
+];
 
 const timeline = [
   {
     year: "2020",
-    title: "The Beginning",
-    description: "GeoJogos started as a research project exploring game-based learning in Geography education.",
+    title: "O Início",
+    description:
+      "GeoJogos começou como um projeto de pesquisa explorando a aprendizagem baseada em jogos no ensino de Geografia.",
   },
   {
     year: "2021",
-    title: "First Games",
-    description: "We developed our first educational board games and tested them in partner schools.",
+    title: "Primeiros Jogos",
+    description:
+      "Desenvolvemos nossos primeiros jogos de tabuleiro educacionais e os testamos em escolas parceiras.",
   },
   {
     year: "2022",
-    title: "Going Digital",
-    description: "Expanded into digital game development, creating interactive experiences for computers and tablets.",
+    title: "Digitalizando",
+    description:
+      "Expandimos para o desenvolvimento de jogos digitais, criando experiências interativas para computadores e tablets.",
   },
   {
     year: "2023",
-    title: "Custom Development",
-    description: "Launched our custom game development service for schools and educational institutions.",
+    title: "Desenvolvimento Customizado",
+    description:
+      "Lançamos nosso serviço de desenvolvimento de jogos customizados para escolas e instituições educacionais.",
   },
   {
     year: "2024",
-    title: "Growing Impact",
-    description: "Our games are now used in classrooms across Brazil, helping thousands of students learn Geography.",
+    title: "Crescimento de Impacto",
+    description:
+      "Nossos jogos agora são usados em salas de aula em todo o Brasil, ajudando milhares de alunos a aprender Geografia.",
   },
-]
+];
 
 export default function AboutPage() {
   return (
@@ -74,18 +89,20 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
               <h1 className="text-4xl font-bold text-foreground md:text-5xl">
-                About <span className="text-primary">GeoJogos</span>
+                Sobre o <span className="text-primary">GeoJogos</span>
               </h1>
               <p className="mt-6 text-lg text-muted-foreground">
-                We are an educational game studio dedicated to transforming how Geography is taught and learned in
-                schools. Through innovative game design and pedagogical expertise, we create learning experiences that
-                engage, challenge, and inspire students.
+                Somos um estúdio de jogos educacionais dedicado a transformar a
+                forma como a Geografia é ensinada e aprendida nas escolas.
+                Através de design inovador de jogos e expertise pedagógica,
+                criamos experiências de aprendizagem que engajam, desafiam e
+                inspiram os alunos.
               </p>
             </div>
             <div className="relative">
               <Image
                 src="/students-board-game-map-spatial-thinking-classroom.jpg"
-                alt="GeoJogos team at work"
+                alt="Equipe GeoJogos trabalhando"
                 width={500}
                 height={400}
                 className="rounded-2xl shadow-xl"
@@ -97,14 +114,19 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <SectionHeading title="Our Story" subtitle="From research project to educational game studio" />
+        <SectionHeading
+          title="Nossa História"
+          subtitle="De projeto de pesquisa a estúdio de jogos educacionais"
+        />
         <div className="relative">
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-border md:left-1/2" />
           <div className="space-y-12">
             {timeline.map((item, index) => (
               <div
                 key={item.year}
-                className={`relative flex gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                className={`relative flex gap-8 ${
+                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                }`}
               >
                 <div className="hidden md:block md:w-1/2" />
                 <div className="absolute left-8 md:left-1/2 -translate-x-1/2 flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
@@ -113,9 +135,15 @@ export default function AboutPage() {
                 <div className="ml-16 md:ml-0 md:w-1/2 md:px-8">
                   <Card>
                     <CardContent className="p-6">
-                      <span className="text-sm font-semibold text-primary">{item.year}</span>
-                      <h3 className="mt-2 text-lg font-semibold text-foreground">{item.title}</h3>
-                      <p className="mt-2 text-muted-foreground">{item.description}</p>
+                      <span className="text-sm font-semibold text-primary">
+                        {item.year}
+                      </span>
+                      <h3 className="mt-2 text-lg font-semibold text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-2 text-muted-foreground">
+                        {item.description}
+                      </p>
                     </CardContent>
                   </Card>
                 </div>
@@ -134,10 +162,14 @@ export default function AboutPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
                   <Target className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Mission</h3>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Missão
+                </h3>
                 <p className="mt-3 text-muted-foreground">
-                  To improve Geography education in Brazil through innovative, research-based educational games that
-                  engage students and support teachers in creating meaningful learning experiences.
+                  Melhorar a educação em Geografia no Brasil através de jogos
+                  educacionais inovadores, baseados em pesquisa, que engajam os
+                  alunos e apoiam os professores na criação de experiências de
+                  aprendizagem significativas.
                 </p>
               </CardContent>
             </Card>
@@ -146,10 +178,11 @@ export default function AboutPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
                   <Eye className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Vision</h3>
+                <h3 className="text-xl font-semibold text-foreground">Visão</h3>
                 <p className="mt-3 text-muted-foreground">
-                  A future where every Geography classroom has access to high-quality educational games that make
-                  learning engaging, accessible, and effective for all students.
+                  Um futuro onde toda sala de aula de Geografia tem acesso a
+                  jogos educacionais de alta qualidade que tornam a aprendizagem
+                  envolvente, acessível e eficaz para todos os alunos.
                 </p>
               </CardContent>
             </Card>
@@ -158,10 +191,13 @@ export default function AboutPage() {
                 <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
                   <Heart className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="text-xl font-semibold text-foreground">Core Belief</h3>
+                <h3 className="text-xl font-semibold text-foreground">
+                  Crença Central
+                </h3>
                 <p className="mt-3 text-muted-foreground">
-                  Learning through play is not just for children. Well-designed games can create powerful learning
-                  experiences for students of all ages and backgrounds.
+                  Aprender através da brincadeira não é apenas para crianças.
+                  Jogos bem projetados podem criar experiências poderosas de
+                  aprendizagem para alunos de todas as idades e origens.
                 </p>
               </CardContent>
             </Card>
@@ -171,16 +207,27 @@ export default function AboutPage() {
 
       {/* Values */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <SectionHeading title="Our Values" subtitle="The principles that guide everything we do" centered />
+        <SectionHeading
+          title="Nossos Valores"
+          subtitle="Os princípios que guiam tudo o que fazemos"
+          centered
+        />
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {values.map((value) => (
-            <Card key={value.title} className="group transition-all duration-300 hover:shadow-lg">
+            <Card
+              key={value.title}
+              className="group transition-all duration-300 hover:shadow-lg"
+            >
               <CardContent className="p-6 text-center">
                 <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-primary">
                   <value.icon className="h-7 w-7 text-primary-foreground" />
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-foreground">{value.title}</h3>
-                <p className="text-sm text-muted-foreground">{value.description}</p>
+                <h3 className="mb-2 text-lg font-semibold text-foreground">
+                  {value.title}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {value.description}
+                </p>
               </CardContent>
             </Card>
           ))}
@@ -192,50 +239,58 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
-              <h2 className="text-3xl font-bold text-foreground md:text-4xl">Geography + Education + Game Design</h2>
+              <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+                Geografia + Educação + Design de Jogos
+              </h2>
               <div className="mt-6 space-y-4 text-muted-foreground">
                 <p>
-                  GeoJogos exists at the intersection of three disciplines: Geography, Education, and Game Design. This
-                  unique combination allows us to create educational experiences that are pedagogically sound,
-                  geographically accurate, and genuinely fun to play.
+                  GeoJogos existe na intersecção de três disciplinas: Geografia,
+                  Educação e Design de Jogos. Esta combinação única nos permite
+                  criar experiências educacionais que são pedagogicamente
+                  sólidas, geograficamente precisas e genuinamente divertidas de
+                  jogar.
                 </p>
                 <p>
-                  Our team includes geographers who understand the content, educators who understand learning, and game
-                  designers who understand engagement. Together, we create games that work in real classrooms with real
-                  students.
+                  Nossa equipe inclui geógrafos que entendem o conteúdo,
+                  educadores que entendem a aprendizagem e designers de jogos
+                  que entendem o engajamento. Juntos, criamos jogos que
+                  funcionam em salas de aula reais com alunos reais.
                 </p>
                 <p>
-                  We believe that games are not just entertainment—they are powerful tools for learning. When designed
-                  thoughtfully, games can teach complex concepts, develop critical skills, and create memorable learning
-                  experiences that traditional methods cannot match.
+                  Acreditamos que os jogos não são apenas entretenimento—eles
+                  são ferramentas poderosas para a aprendizagem. Quando
+                  projetados com cuidado, os jogos podem ensinar conceitos
+                  complexos, desenvolver habilidades críticas e criar
+                  experiências de aprendizagem memoráveis que os métodos
+                  tradicionais não conseguem igualar.
                 </p>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-4">
               <Image
                 src="/digital-geography-quiz-game-brazil-map.jpg"
-                alt="Geography"
+                alt="Geografia"
                 width={200}
                 height={200}
                 className="rounded-xl object-cover w-full h-auto"
               />
               <Image
                 src="/teacher-customizing-educational-materials-local-ma.jpg"
-                alt="Education"
+                alt="Educação"
                 width={200}
                 height={200}
                 className="rounded-xl object-cover w-full h-auto"
               />
               <Image
                 src="/educational-board-game-climate-zones-world-map.jpg"
-                alt="Game Design"
+                alt="Design de Jogos"
                 width={200}
                 height={200}
                 className="rounded-xl object-cover w-full h-auto"
               />
               <Image
                 src="/classroom-students-playing-educational-game-geogra.jpg"
-                alt="Students Learning"
+                alt="Alunos Aprendendo"
                 width={200}
                 height={200}
                 className="rounded-xl object-cover w-full h-auto"
@@ -247,14 +302,23 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
-        <h2 className="text-3xl font-bold text-foreground md:text-4xl">Want to Work With Us?</h2>
+        <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+          Quer Trabalhar Conosco?
+        </h2>
         <p className="mt-4 text-lg text-muted-foreground">
-          Whether you&apos;re a teacher looking for educational games or a school interested in custom development,
-          we&apos;d love to hear from you.
+          Seja um professor procurando por jogos educacionais ou uma escola
+          interessada em desenvolvimento personalizado, gostaríamos de ouvir
+          você.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary-dark text-primary-foreground">
-            <Link href="/custom-projects">Explore Custom Projects</Link>
+          <Button
+            asChild
+            size="lg"
+            className="bg-primary hover:bg-primary-dark text-primary-foreground"
+          >
+            <Link href="/custom-projects">
+              Explorar Projetos Personalizados
+            </Link>
           </Button>
           <Button
             asChild
@@ -262,10 +326,10 @@ export default function AboutPage() {
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
           >
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/contact">Contato</Link>
           </Button>
         </div>
       </section>
     </div>
-  )
+  );
 }

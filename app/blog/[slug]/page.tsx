@@ -1,62 +1,68 @@
-import type { Metadata } from "next"
-import Image from "next/image"
-import Link from "next/link"
-import { notFound } from "next/navigation"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { blogPosts, getBlogPostBySlug, getRecentPosts } from "@/lib/data/blog"
-import { BlogCard } from "@/components/ui/blog-card"
-import { ArrowLeft, Calendar, User } from "lucide-react"
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { blogPosts, getBlogPostBySlug, getRecentPosts } from "@/lib/data/blog";
+import { BlogCard } from "@/components/ui/blog-card";
+import { ArrowLeft, Calendar, User } from "lucide-react";
 
 interface BlogPostPageProps {
-  params: Promise<{ slug: string }>
+  params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({
     slug: post.slug,
-  }))
+  }));
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+export async function generateMetadata({
+  params,
+}: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
     return {
-      title: "Post Not Found",
-    }
+      title: "Post Não Encontrado",
+    };
   }
 
   return {
     title: post.title,
     description: post.summary,
-  }
+  };
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  const { slug } = await params
-  const post = getBlogPostBySlug(slug)
+  const { slug } = await params;
+  const post = getBlogPostBySlug(slug);
 
   if (!post) {
-    notFound()
+    notFound();
   }
 
-  const recentPosts = getRecentPosts(3).filter((p) => p.slug !== slug)
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
+  const recentPosts = getRecentPosts(3).filter((p) => p.slug !== slug);
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString("pt-BR", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  })
+  });
 
   return (
     <div>
       {/* Back Button */}
       <div className="mx-auto max-w-4xl px-4 pt-8 lg:px-8">
-        <Button asChild variant="ghost" className="gap-2 text-muted-foreground hover:text-primary">
+        <Button
+          asChild
+          variant="ghost"
+          className="gap-2 text-muted-foreground hover:text-primary"
+        >
           <Link href="/blog">
             <ArrowLeft className="h-4 w-4" />
-            Back to Blog
+            Voltar para Blog
           </Link>
         </Button>
       </div>
@@ -78,13 +84,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               {post.author}
             </div>
           </div>
-          <h1 className="text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">{post.title}</h1>
+          <h1 className="text-3xl font-bold text-foreground md:text-4xl lg:text-5xl">
+            {post.title}
+          </h1>
           <p className="mt-4 text-lg text-muted-foreground">{post.summary}</p>
         </header>
 
         {/* Cover Image */}
         <div className="relative mb-12 aspect-[2/1] overflow-hidden rounded-2xl">
-          <Image src={post.coverImage || "/placeholder.svg"} alt={post.title} fill className="object-cover" priority />
+          <Image
+            src={post.coverImage || "/placeholder.svg"}
+            alt={post.title}
+            fill
+            className="object-cover"
+            priority
+          />
         </div>
 
         {/* Content */}
@@ -98,7 +112,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           <h3 className="mb-4 font-semibold text-foreground">Tags</h3>
           <div className="flex flex-wrap gap-2">
             {post.tags.map((tag) => (
-              <Badge key={tag} variant="secondary" className="bg-muted text-muted-foreground">
+              <Badge
+                key={tag}
+                variant="secondary"
+                className="bg-muted text-muted-foreground"
+              >
                 {tag}
               </Badge>
             ))}
@@ -110,7 +128,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {recentPosts.length > 0 && (
         <section className="bg-muted py-16">
           <div className="mx-auto max-w-7xl px-4 lg:px-8">
-            <h2 className="mb-8 text-2xl font-bold text-foreground">More Articles</h2>
+            <h2 className="mb-8 text-2xl font-bold text-foreground">
+              Mais Artigos
+            </h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
               {recentPosts.slice(0, 3).map((relatedPost) => (
                 <BlogCard key={relatedPost.id} post={relatedPost} />
@@ -122,23 +142,27 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-4 py-16 text-center lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">Want to Learn More?</h2>
+        <h2 className="text-2xl font-bold text-foreground">Quer Saber Mais?</h2>
         <p className="mt-4 text-muted-foreground">
-          Explore our educational games or discuss a custom project for your school.
+          Explore nossos jogos educacionais ou discuta um projeto personalizado
+          para sua escola.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Button asChild className="bg-primary hover:bg-primary-dark text-primary-foreground">
-            <Link href="/games">View Our Games</Link>
+          <Button
+            asChild
+            className="bg-primary hover:bg-primary-dark text-primary-foreground"
+          >
+            <Link href="/games">Ver Nossos Jogos</Link>
           </Button>
           <Button
             asChild
             variant="outline"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
           >
-            <Link href="/contact">Contact Us</Link>
+            <Link href="/contact">Entre em Contato</Link>
           </Button>
         </div>
       </section>
     </div>
-  )
+  );
 }

@@ -1,39 +1,39 @@
-import type React from "react"
-import type { Metadata, Viewport } from "next"
-import { Inter, Merriweather } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import "./globals.css"
-import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
+import type React from "react";
+import type { Metadata, Viewport } from "next";
+import { Inter, Merriweather } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import "./globals.css";
+import { Header } from "@/components/layout/header";
+import { Footer } from "@/components/layout/footer";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "700"],
   variable: "--font-merriweather",
-})
+});
 
 export const metadata: Metadata = {
   title: {
-    default: "GeoJogos - Educational Games for Geography",
+    default: "GeoJogos - Jogos Educacionais para Geografia",
     template: "%s | GeoJogos",
   },
   description:
-    "We create customized digital and analog games to transform Geography education in schools. Educational game studio specializing in custom game development for teachers and institutions.",
+    "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas. Estúdio de jogos educacionais especializado em desenvolvimento de jogos personalizados para professores e instituições.",
   keywords: [
-    "educational games",
-    "geography education",
-    "board games",
-    "digital games",
-    "custom games",
-    "schools",
-    "teachers",
+    "jogos educacionais",
+    "educação em geografia",
+    "jogos de tabuleiro",
+    "jogos digitais",
+    "jogos personalizados",
+    "escolas",
+    "professores",
   ],
   authors: [{ name: "GeoJogos" }],
   generator: "v0.app",
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "pt_BR",
     siteName: "GeoJogos",
   },
   icons: {
@@ -53,21 +53,21 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export const viewport: Viewport = {
   themeColor: "#2d7a3a",
   width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="font-sans antialiased">
         <Header />
         <main className="min-h-screen">{children}</main>
@@ -75,5 +75,5 @@ export default function RootLayout({
         <Analytics />
       </body>
     </html>
-  )
+  );
 }

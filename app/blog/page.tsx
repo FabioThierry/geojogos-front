@@ -1,12 +1,13 @@
-import type { Metadata } from "next"
-import { blogPosts } from "@/lib/data/blog"
-import { BlogCard } from "@/components/ui/blog-card"
-import { SectionHeading } from "@/components/ui/section-heading"
+import type { Metadata } from "next";
+import { blogPosts } from "@/lib/data/blog";
+import { BlogCard } from "@/components/ui/blog-card";
+import { SectionHeading } from "@/components/ui/section-heading";
 
 export const metadata: Metadata = {
   title: "Blog",
-  description: "Articles and research on Geography education, game-based learning, and educational game development.",
-}
+  description:
+    "Artigos e pesquisa sobre educação em Geografia, aprendizagem baseada em jogos e desenvolvimento de jogos educacionais.",
+};
 
 export default function BlogPage() {
   return (
@@ -15,18 +16,22 @@ export default function BlogPage() {
       <section className="bg-gradient-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">
           <h1 className="text-4xl font-bold text-foreground md:text-5xl">
-            Our <span className="text-primary">Blog</span>
+            Nosso <span className="text-primary">Blog</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground">
-            Insights on Geography education, game-based learning research, and practical guides for implementing
-            educational games in your classroom.
+            Insights sobre educação em Geografia, pesquisa sobre aprendizagem
+            baseada em jogos, e guias práticos para implementar jogos
+            educacionais em sua sala de aula.
           </p>
         </div>
       </section>
 
       {/* Blog Posts */}
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <SectionHeading title="Latest Articles" subtitle="Research, guides, and insights for educators" />
+        <SectionHeading
+          title="Últimos Artigos"
+          subtitle="Pesquisa, guias e insights para educadores"
+        />
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post) => (
             <BlogCard key={post.id} post={post} />
@@ -37,13 +42,18 @@ export default function BlogPage() {
       {/* Newsletter CTA */}
       <section className="bg-muted py-20">
         <div className="mx-auto max-w-2xl px-4 text-center lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">Stay Updated</h2>
+          <h2 className="text-2xl font-bold text-foreground">
+            Mantenha-se Atualizado
+          </h2>
           <p className="mt-4 text-muted-foreground">
-            Subscribe to receive new articles, research findings, and educational resources directly in your inbox.
+            Inscreva-se para receber novos artigos, descobertas de pesquisa e
+            recursos educacionais diretamente em sua caixa de entrada.
           </p>
-          <p className="mt-6 text-sm text-muted-foreground">Newsletter subscription coming soon.</p>
+          <p className="mt-6 text-sm text-muted-foreground">
+            Inscrição para newsletter em breve.
+          </p>
         </div>
       </section>
     </div>
-  )
+  );
 }

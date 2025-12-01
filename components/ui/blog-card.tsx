@@ -1,19 +1,19 @@
-import Image from "next/image"
-import Link from "next/link"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import type { BlogPost } from "@/lib/data/blog"
+import Image from "next/image";
+import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import type { BlogPost } from "@/lib/data/blog";
 
 interface BlogCardProps {
-  post: BlogPost
+  post: BlogPost;
 }
 
 export function BlogCard({ post }: BlogCardProps) {
-  const formattedDate = new Date(post.publishedAt).toLocaleDateString("en-US", {
+  const formattedDate = new Date(post.publishedAt).toLocaleDateString("pt-BR", {
     year: "numeric",
     month: "long",
     day: "numeric",
-  })
+  });
 
   return (
     <Card className="group overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
@@ -31,14 +31,18 @@ export function BlogCard({ post }: BlogCardProps) {
             <Badge variant="outline" className="border-primary text-primary">
               {post.category}
             </Badge>
-            <span className="text-xs text-muted-foreground">{formattedDate}</span>
+            <span className="text-xs text-muted-foreground">
+              {formattedDate}
+            </span>
           </div>
           <h3 className="mb-2 text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
             {post.title}
           </h3>
-          <p className="text-sm text-muted-foreground line-clamp-2">{post.summary}</p>
+          <p className="text-sm text-muted-foreground line-clamp-2">
+            {post.summary}
+          </p>
         </CardContent>
       </Link>
     </Card>
-  )
+  );
 }
