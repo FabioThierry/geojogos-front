@@ -9,7 +9,7 @@ export const aboutData: AboutType = {
   hero: {
     title: "Sobre o GeoJogos",
     lead: "Somos um estúdio de Jogos Educacionais dedicado a transformar a forma como a Geografia é ensinada e aprendida nas escolas. Através de design inovador de jogos e expertise pedagógica, criamos experiências de aprendizagem envolvente que desafiam e inspiram os estudantes.",
-    image: "/foto_geojogos.jpg",
+    image: "/teste-do-alavantu-geojogos.jpg",
     imageAlt: "Teste de jogo do GeoJogos com estudantes",
   },
   story: {
@@ -24,40 +24,58 @@ export const aboutData: AboutType = {
         "GeoJogos começou como um projeto de pesquisa explorando o ensino do conceito de Lugar no ensino de Geografia.",
     },
     {
-      year: "2021",
+      year: "2019.1",
       title: "Primeiros Jogos",
       description:
-        "Desenvolvemos nossos primeiros jogos de tabuleiro educacionais o Alavantu em Campina e Jornada para Além'mar.",
+        "Desenvolvemos nossos primeiros jogos: o Alavantú em Campina e o Jogo Digital Lugares de Campina.",
     },
     {
-      year: "2022",
+      year: "2019.2",
+      title: "Retorno às Origens",
+      description:
+        "Retornamos para criar o Jornada para Além'mar, um jogo de tabuleiro que explora o periodo das grandes navegações",
+    },
+    {
+      year: "2020",
       title: "Digitalizando",
       description:
-        "Expandimos para o desenvolvimento de jogos digitais, criando experiências interativas para computadores e tablets.",
+        "Expandimos para o desenvolvimento dos jogos digitais, aprimorando o Lugares de Campina na versão do jogo Jump in CG: Açude Velho.",
     },
     {
-      year: "2023",
+      year: "2021.1",
       title: "Desenvolvimento Customizado",
       description:
-        "Lançamos nosso serviço de desenvolvimento de jogos customizados para escolas e instituições educacionais.",
+        "Seguimos o desenvolvimento de jogos digitais, o Limpa Riacho: Coleta Seletiva destinado a ensinar sobre a importância da preservação dos recursos hídricos e a coleta seletiva.",
     },
     {
-      year: "2024",
-      title: "Crescimento de Impacto",
+      year: "2021.2",
+      title: "Um novo desafio",
       description:
-        "Nossos jogos agora são usados em salas de aula em todo o Brasil, ajudando milhares de alunos a aprender Geografia.",
+        "Buscamos um novo desafio e começamos a desenvolver o jogo digital destinado a ensinar sobre o Território do Estado da Paraíba, o Expedição Paraíba",
+    },
+    {
+      year: "2022-2024",
+      title: "Novos Horizontes",
+      description:
+        "Expandimos nosso portfólio com o desenvolvimento de jogos em outros polos de pesquisa ciêntifica, contribuindo para o desenvolvimento e design dos jogos UFRN no Minecraft",
+    },
+    {
+      year: "2024-2025",
+      title: "Aprimoramento e Expansão",
+      description:
+        "A partir do aprendizado dos projetos anteriores, aprimoramos nossos processos de desenvolvimento e design, e expandimos nosso portfólio com a criação da aventura no Minecraft, a UFCG: Adventure."
     },
   ],
   mission: {
     title: "Missão",
     description:
-      "Melhorar a educação em Geografia no Brasil através de jogos educacionais inovadores, baseados em pesquisa, que engajam os alunos e apoiam os professores na criação de experiências de aprendizagem significativas.",
+      "Diversificar os métodos de ensinar Geografia através de de experiências de aprendizagem significativas por meio dos jogos educacionais inovadores, baseados em pesquisa e que sejam envolventes para os estudantes e os professores.",
     icon: "Target",
   },
   vision: {
     title: "Visão",
     description:
-      "Um futuro onde toda sala de aula de Geografia tem acesso a jogos educacionais de alta qualidade que tornam a aprendizagem envolvente, acessível e eficaz para todos os alunos.",
+      "Um futuro onde toda sala de aula de Geografia tem acesso ao recurso de jogos educacionais de alta qualidade que tornam a aprendizagem envolvente, acessível e eficaz para todos os alunos.",
     icon: "Eye",
   },
   coreBelief: {
@@ -91,12 +109,12 @@ export const aboutData: AboutType = {
         iconKey: "Globe",
         title: "Relevância Local",
         description:
-          "Nossos jogos refletem a geografia brasileira e podem ser personalizados para abordar contextos regionais e locais.",
+          "Nossos jogos refletem a Geografia brasileira e podem ser personalizados para abordar contextos regionais e locais.",
       },
     ],
   },
   cta: {
-    title: "Quer Trabalhar Conosco?",
+    title: "Ficou Interessado em Nossos Serviços?",
     subtitle:
       "Explore nossos serviços de projetos personalizados ou entre em contato para saber mais.",
     primary: "Explorar Projetos Personalizados",

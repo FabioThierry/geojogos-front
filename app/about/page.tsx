@@ -177,7 +177,7 @@ export default async function AboutPage() {
       </section>
 
       {/* Geography + Education + Games */}
-      <section className="bg-primary-muted py-20">
+      {/* <section className="bg-primary-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div>
@@ -240,10 +240,11 @@ export default async function AboutPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
-      <section className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
+      <section className="py-20 ">
+        <div className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
         <h2 className="text-3xl font-bold text-foreground md:text-4xl">
           {aboutData.cta.title}
         </h2>
@@ -266,6 +267,7 @@ export default async function AboutPage() {
           >
             <Link href="/contact">{aboutData.cta.secondary}</Link>
           </Button>
+        </div>
         </div>
       </section>
     </div>
