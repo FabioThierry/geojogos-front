@@ -99,11 +99,14 @@ export default async function HomePage() {
             </Button>
           </div>
           <div className="relative">
+            {/* TODO: Replace to data info */}
             <Image
-              src="/classroom-students-playing-educational-game-geogra.jpg"
+              src="/about.jpg"
               alt="Alunos jogando jogos educacionais"
               width={600}
               height={500}
+              autoFocus
+              
               className="rounded-2xl shadow-xl"
             />
           </div>
@@ -115,7 +118,7 @@ export default async function HomePage() {
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
             title="O que criamos"
-            subtitle="De simulações digitais a jogos de tabuleiro táteis, desenvolvemos ferramentas educacionais que trazem a Geografia à vida."
+            subtitle="De simulações digitais a jogos de tabuleiro, desenvolvemos ferramentas educacionais que trazem a Geografia associada ao Lúdico."
             centered
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">

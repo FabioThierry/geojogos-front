@@ -17,7 +17,7 @@ export const homeData: HomeType = {
   about: {
     title: "O que é o GeoJogos?",
     paragraphs: [
-      "Um estúdio de jogos educacionais dedicado a transformar a forma como a Geografia é ensinada e aprendida nas escolas de todo o Brasil.",
+      "Um estúdio de jogos educacionais dedicado a transformar a forma como a Geografia é ensinada e aprendida nas escolas.",
       "Desenvolvemos jogos alinhados ao currículo, com foco em habilidades geográficas e pensamento crítico.",
       "Nossos jogos são projetados por educadores e designers de jogos para uso prático em sala de aula.",
     ],
