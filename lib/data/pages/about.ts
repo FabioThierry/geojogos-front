@@ -8,9 +8,9 @@ export const aboutData: AboutType = {
   },
   hero: {
     title: "Sobre o GeoJogos",
-    lead: "Somos um estúdio de jogos educacionais dedicado a transformar a forma como a Geografia é ensinada e aprendida nas escolas. Através de design inovador de jogos e expertise pedagógica, criamos experiências de aprendizagem que engajam, desafiam e inspiram os alunos.",
-    image: "/students-board-game-map-spatial-thinking-classroom.jpg",
-    imageAlt: "Equipe GeoJogos trabalhando",
+    lead: "Somos um estúdio de Jogos Educacionais dedicado a transformar a forma como a Geografia é ensinada e aprendida nas escolas. Através de design inovador de jogos e expertise pedagógica, criamos experiências de aprendizagem envolvente que desafiam e inspiram os estudantes.",
+    image: "/foto_geojogos.jpg",
+    imageAlt: "Teste de jogo do GeoJogos com estudantes",
   },
   story: {
     title: "Nossa História",
@@ -18,16 +18,16 @@ export const aboutData: AboutType = {
   },
   timeline: [
     {
-      year: "2020",
+      year: "2018",
       title: "O Início",
       description:
-        "GeoJogos começou como um projeto de pesquisa explorando a aprendizagem baseada em jogos no ensino de Geografia.",
+        "GeoJogos começou como um projeto de pesquisa explorando o ensino do conceito de Lugar no ensino de Geografia.",
     },
     {
       year: "2021",
       title: "Primeiros Jogos",
       description:
-        "Desenvolvemos nossos primeiros jogos de tabuleiro educacionais e os testamos em escolas parceiras.",
+        "Desenvolvemos nossos primeiros jogos de tabuleiro educacionais o Alavantu em Campina e Jornada para Além'mar.",
     },
     {
       year: "2022",
