@@ -36,6 +36,12 @@ export const homeData: HomeType = {
       description:
         "Jogos analógicos projetados para atividades colaborativas em sala de aula.",
     },
+    {
+      iconKey: "Gamepad2",
+      title: "Jogos Educacionais Digitais",
+      description:
+        "Jogos digitais projetados para engajar os alunos em conceitos geográficos de forma lúdica.",
+    },
   ],
   benefits: [
     {

@@ -16,6 +16,7 @@ import {
   Brain,
   Lightbulb,
   Building2,
+  Gamepad2
 } from "lucide-react";
 
 export default async function HomePage() {
@@ -84,10 +85,9 @@ export default async function HomePage() {
           <div>
             <SectionHeading
               title={homeData.about.title}
-              subtitle={homeData.about.paragraphs[0]}
             />
             <div className="space-y-4 text-muted-foreground">
-              {homeData.about.paragraphs.slice(1).map((paragraph, idx) => (
+              {homeData.about.paragraphs.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
               ))}
             </div>
@@ -117,34 +117,34 @@ export default async function HomePage() {
       <section className="bg-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
-            title="O que criamos"
-            subtitle="De simulações digitais a jogos de tabuleiro, desenvolvemos ferramentas educacionais que trazem a Geografia associada ao Lúdico."
-            centered
+        title="O que criamos"
+        subtitle="De simulações digitais a jogos de tabuleiro, desenvolvemos ferramentas educacionais que trazem a Geografia associada ao Lúdico."
+        centered
           />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-2">
-            {homeData.services.map((service) => {
-              return (
-                <Card
-                  key={service.title}
-                  className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-                >
-                  <CardContent className="p-6">
-                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
-                      <IconRenderer
-                        name={service.iconKey}
-                        className="h-6 w-6 text-primary"
-                      />
-                    </div>
-                    <h3 className="mb-2 text-lg font-semibold text-foreground">
-                      {service.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      {service.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {homeData.services.map((service) => {
+          return (
+            <Card
+          key={service.title}
+          className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+            >
+          <CardContent className="p-6">
+            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
+              <IconRenderer
+            name={service.iconKey}
+            className="h-6 w-6 text-primary"
+              />
+            </div>
+            <h3 className="mb-2 text-lg font-semibold text-foreground">
+              {service.title}
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              {service.description}
+            </p>
+          </CardContent>
+            </Card>
+          );
+        })}
           </div>
         </div>
       </section>
