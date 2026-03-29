@@ -65,14 +65,14 @@ export const homeData: HomeType = {
   },
   partners: [
     {
-      name: "Escola Parceira 1",
-      logo: "/images/partner1.png",
-      alt: "Logo Escola Parceira 1",
+      name: "UFCG",
+      logo: "/UFCG-lateral.png",
+      alt: "Logo Escola Parceira com a UFCG",
     },
     {
-      name: "Escola Parceira 2",
-      logo: "/images/partner2.png",
-      alt: "Logo Escola Parceira 2",
+      name: "UFRN",
+      logo: "/UFRN.png",
+      alt: "Logo Escola Parceira com a UFRN",
     },
   ],
   cta: {

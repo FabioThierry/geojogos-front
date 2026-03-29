@@ -16,7 +16,7 @@ import {
   Brain,
   Lightbulb,
   Building2,
-  Gamepad2
+  Gamepad2,
 } from "lucide-react";
 
 export default async function HomePage() {
@@ -65,12 +65,12 @@ export default async function HomePage() {
               </div>
             </div>
             <div className="relative hidden lg:block">
-              <div className="relative aspect-square">
+              <div className="group relative aspect-4/3 rounded-3xl overflow-hidden transition-transform duration-500 hover:rotate-3">
                 <Image
-                  src="/images/geojogos-20-283-29.png"
+                  src="/images/20190827_145807.jpg"
                   alt="GeoJogos - Jogos Educacionais"
                   fill
-                  className="object-contain"
+                  className="object-cover object-[10%_90%] origin-[42%_65%] transition-transform duration-500 delay-300 ease-out group-hover:scale-[1.5] group-hover:rotate-3"
                   priority
                 />
               </div>
@@ -83,9 +83,7 @@ export default async function HomePage() {
       <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
           <div>
-            <SectionHeading
-              title={homeData.about.title}
-            />
+            <SectionHeading title={homeData.about.title} />
             <div className="space-y-4 text-muted-foreground">
               {homeData.about.paragraphs.map((paragraph, idx) => (
                 <p key={idx}>{paragraph}</p>
@@ -106,7 +104,6 @@ export default async function HomePage() {
               width={600}
               height={500}
               autoFocus
-              
               className="rounded-2xl shadow-xl"
             />
           </div>
@@ -117,34 +114,34 @@ export default async function HomePage() {
       <section className="bg-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
-        title="O que criamos"
-        subtitle="De simulações digitais a jogos de tabuleiro, desenvolvemos ferramentas educacionais que trazem a Geografia associada ao Lúdico."
-        centered
+            title="O que criamos"
+            subtitle="De simulações digitais a jogos de tabuleiro, desenvolvemos ferramentas educacionais que trazem a Geografia associada ao Lúdico."
+            centered
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {homeData.services.map((service) => {
-          return (
-            <Card
-          key={service.title}
-          className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-            >
-          <CardContent className="p-6">
-            <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
-              <IconRenderer
-            name={service.iconKey}
-            className="h-6 w-6 text-primary"
-              />
-            </div>
-            <h3 className="mb-2 text-lg font-semibold text-foreground">
-              {service.title}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {service.description}
-            </p>
-          </CardContent>
-            </Card>
-          );
-        })}
+            {homeData.services.map((service) => {
+              return (
+                <Card
+                  key={service.title}
+                  className="group transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                >
+                  <CardContent className="p-6">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary-muted">
+                      <IconRenderer
+                        name={service.iconKey}
+                        className="h-6 w-6 text-primary"
+                      />
+                    </div>
+                    <h3 className="mb-2 text-lg font-semibold text-foreground">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground">
+                      {service.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </div>
       </section>
