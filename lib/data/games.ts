@@ -17,13 +17,13 @@ export interface Game {
 export const games: Game[] = [
   {
     id: "1",
-    slug: "geoquiz-brazil",
-    title: "GeoQuiz Brasil",
+    slug: "jump-in-cg-acude-velho",
+    title: "Jump in CG: Açude Velho",
     shortDescription:
-      "Jogo digital interativo de quiz explorando a geografia, regiões e diversidade cultural do Brasil.",
+      "Jump in CG é uma aventura no calçadão às margens do Açude Velho.",
     fullDescription:
-      "GeoQuiz Brasil é um envolvente jogo educacional digital projetado para ajudar os alunos a explorarem a diversa geografia do Brasil. Através de quizzes interativos, desafios de mapa e experiências de aprendizado visual, os alunos descobrem as cinco regiões, capitais dos estados, biomas e características culturais que tornam o Brasil único. O jogo se adapta a diferentes níveis de habilidade e fornece feedback imediato para reforçar o aprendizado.",
-    coverImage: "/digital-geography-quiz-game-brazil-map.jpg",
+      "Em uma voltinha pelo açude, de bike ou skate, desvie dos obstáculos tão característicos deste ambiente. Das muitas garças ao temido jacaré do Açude Velho cuidado para não se acidentar e aprecie a paisagem deste oasis urbano. Embora este seja um dos nossos primeiros trabalhos, também é um dos nossos jogos de mais facilitado acesso. É nosso pioneiro no modelo de jogos para celular. Esse jogo representa muitos elementos e temas que, desde então, se tornaram assuntos importantes em todo o nosso trabalho. Aos que gostam de jogos do estilo puzzle ou runner, encorajamos nossos jogadores a conferirem o Jump in CG: Açude Velho para que possam realmente curtir a experiência completa do Geojogos.",
+    coverImage: "/jump-in-cg.png",
     type: "digital",
     category: "geography",
     targetLevel: "Ensino Fundamental e Médio (6-9ª série)",
@@ -195,7 +195,7 @@ export function getFeaturedGames(): Game[] {
 
 export function filterGames(
   type?: "digital" | "boardgame",
-  category?: "geography" | "interdisciplinary"
+  category?: "geography" | "interdisciplinary",
 ): Game[] {
   return games.filter((game) => {
     if (type && game.type !== type) return false;
