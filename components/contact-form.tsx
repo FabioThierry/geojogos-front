@@ -3,25 +3,86 @@
 import type React from "react";
 
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
+import ReCAPTCHA from "react-google-recaptcha";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, AlertCircle } from "lucide-react";
+
+// Zod schema for client-side validation
+const contactSchema = z.object({
+  name: z.string().min(1, "Nome é obrigatório").max(100, "Nome muito longo"),
+  email: z.string().email("Email inválido"),
+  subject: z
+    .string()
+    .min(1, "Assunto é obrigatório")
+    .max(200, "Assunto muito longo"),
+  message: z
+    .string()
+    .min(10, "Mensagem deve ter pelo menos 10 caracteres")
+    .max(2000, "Mensagem muito longa"),
+});
+
+type ContactFormData = z.infer<typeof contactSchema>;
 
 export function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+  });
+
+  const onRecaptchaChange = (token: string | null) => {
+    setRecaptchaToken(token);
+  };
+
+  const onSubmit = async (data: ContactFormData) => {
+    if (!recaptchaToken) {
+      setError("Por favor, complete a verificação reCAPTCHA.");
+      return;
+    }
+
     setIsLoading(true);
+    setError(null);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...data,
+          recaptchaToken,
+        }),
+      });
 
-    setIsLoading(false);
-    setIsSubmitted(true);
+      const result = await response.json();
+
+      if (response.ok) {
+        setIsSubmitted(true);
+        reset();
+        setRecaptchaToken(null);
+      } else {
+        setError(result.error || "Erro ao enviar mensagem.");
+      }
+    } catch (err) {
+      setError("Erro de conexão. Tente novamente.");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -48,56 +109,84 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+      {error && (
+        <div className="flex items-center space-x-2 rounded-md bg-destructive/10 p-4 text-destructive">
+          <AlertCircle className="h-5 w-5" />
+          <span>{error}</span>
+        </div>
+      )}
+
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="space-y-2">
           <Label htmlFor="name">Nome</Label>
           <Input
             id="name"
-            name="name"
+            {...register("name")}
             placeholder="Seu nome"
-            required
             className="border-border focus:border-primary focus:ring-primary"
           />
+          {errors.name && (
+            <p className="text-sm text-destructive">{errors.name.message}</p>
+          )}
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
-            name="email"
             type="email"
+            {...register("email")}
             placeholder="seu@email.com"
-            required
             className="border-border focus:border-primary focus:ring-primary"
           />
+          {errors.email && (
+            <p className="text-sm text-destructive">{errors.email.message}</p>
+          )}
         </div>
       </div>
       <div className="space-y-2">
         <Label htmlFor="subject">Assunto</Label>
         <Input
           id="subject"
-          name="subject"
+          {...register("subject")}
           placeholder="Como podemos ajudar?"
-          required
           className="border-border focus:border-primary focus:ring-primary"
         />
+        {errors.subject && (
+          <p className="text-sm text-destructive">{errors.subject.message}</p>
+        )}
       </div>
       <div className="space-y-2">
         <Label htmlFor="message">Mensagem</Label>
         <Textarea
           id="message"
-          name="message"
+          {...register("message")}
           placeholder="Conte-nos sobre seu projeto ou pergunta..."
           rows={6}
-          required
           className="border-border focus:border-primary focus:ring-primary resize-none"
         />
+        {errors.message && (
+          <p className="text-sm text-destructive">{errors.message.message}</p>
+        )}
       </div>
+
+      <div className="space-y-2">
+        <ReCAPTCHA
+          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
+          onChange={onRecaptchaChange}
+        />
+        {!recaptchaToken && (
+          <p className="text-sm text-muted-foreground">
+            Complete a verificação para enviar a mensagem.
+          </p>
+        )}
+      </div>
+
       <Button
         type="submit"
         size="lg"
         className="w-full bg-primary hover:bg-primary-dark text-primary-foreground"
-        disabled={isLoading}
+        disabled={isLoading || !recaptchaToken}
       >
         {isLoading ? "Enviando..." : "Enviar Mensagem"}
       </Button>
