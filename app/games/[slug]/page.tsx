@@ -81,18 +81,18 @@ export default async function GamePage({ params }: GamePageProps) {
             <div className="absolute top-4 left-4 flex gap-2">
               <Badge
                 className={
-                  game.type === "digital"
+                  game.type === "Digital"
                     ? "bg-primary text-primary-foreground"
                     : "bg-foreground text-background"
                 }
               >
-                {game.type === "digital" ? "Digital" : "Jogo de Tabuleiro"}
+                {game.type === "Digital" ? "Digital" : "Jogo de Tabuleiro"}
               </Badge>
               <Badge
                 variant="outline"
                 className="bg-background/90 text-foreground"
               >
-                {game.category === "geography"
+                {game.category === "Geografia"
                   ? "Geografia"
                   : "Interdisciplinar"}
               </Badge>
@@ -123,7 +123,7 @@ export default async function GamePage({ params }: GamePageProps) {
               </Card>
               <Card className="bg-muted/50">
                 <CardContent className="flex items-center gap-3 p-4">
-                  {game.type === "digital" ? (
+                  {game.type === "Digital" ? (
                     <Monitor className="h-5 w-5 text-primary" />
                   ) : (
                     <Puzzle className="h-5 w-5 text-primary" />
@@ -131,7 +131,7 @@ export default async function GamePage({ params }: GamePageProps) {
                   <div>
                     <p className="text-xs text-muted-foreground">Formato</p>
                     <p className="font-medium text-foreground">
-                      {game.type === "digital"
+                      {game.type === "Digital"
                         ? "Jogo Digital"
                         : "Jogo de Tabuleiro"}
                     </p>

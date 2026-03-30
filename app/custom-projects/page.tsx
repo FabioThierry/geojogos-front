@@ -179,7 +179,7 @@ export default async function CustomProjectsPage() {
       </section>
 
       {/* Examples */}
-      <section className="bg-primary-muted py-20">
+      {/* <section className="bg-primary-muted py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <SectionHeading
             title="Aplicações de Exemplo"
@@ -212,7 +212,7 @@ export default async function CustomProjectsPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="bg-primary py-20">

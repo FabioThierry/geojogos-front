@@ -10,7 +10,7 @@ export const customProjectsData: CustomProjectsType = {
     title: "Desenvolvimento de Jogos Personalizados para Escolas",
     subtitle:
       "Cada sala de aula é única. Criamos jogos educacionais personalizados adaptados ao seu currículo específico, alunos e objetivos educacionais. Seja digital ou analógico, projetamos jogos que funcionam para sua realidade.",
-    image: "/teacher-customizing-educational-materials-local-ma.jpg",
+    image: "/custom-game.jpg",
     imageAlt: "Processo de desenvolvimento de jogos personalizados",
     cta: "Iniciar um Projeto Personalizado",
   },

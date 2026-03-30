@@ -9,8 +9,8 @@ export interface Game {
   shortDescription: string;
   fullDescription: string;
   coverImage: string;
-  type: "digital" | "boardgame";
-  category: "geography" | "interdisciplinary";
+  type: "Digital" | "boardgame";
+  category: "Geografia" | "Interdisciplinar";
   targetLevel: string;
   educationalObjectives: string[];
   skillsDeveloped: string[];

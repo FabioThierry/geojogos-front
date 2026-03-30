@@ -84,7 +84,7 @@ export function Footer({ footerData }: FooterProps) {
                 <span>{footerData.contact.location}</span>
               </li>
             </ul>
-            <div className="mt-4 flex gap-4">
+            {/* <div className="mt-4 flex gap-4">
               <a
                 href="#"
                 className="text-muted-foreground transition-colors hover:text-primary"
@@ -106,7 +106,7 @@ export function Footer({ footerData }: FooterProps) {
               >
                 <Youtube className="h-5 w-5" />
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
 

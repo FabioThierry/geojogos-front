@@ -14,8 +14,8 @@ export const contactData: ContactType = {
   info: {
     title: "Informações de Contato",
     lead: "Entre em contato através do formulário ou nos contacte diretamente.",
-    email: "contact@geojogos.com.br",
-    location: "Brasil",
+    email: "fabio@geojogos.com.br",
+    location: "Campina Grande, Paraíba, Brasil",
   },
   reasons: [
     {

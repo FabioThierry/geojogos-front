@@ -29,8 +29,8 @@ export const footerData: Footer = {
   },
   contact: {
     title: "Contato",
-    email: "contact@geojogos.com.br",
-    location: "Brasil",
+    email: "fabio@geojogos.com.br",
+    location: "Campina Grande, Paraíba, Brasil",
     social: {
       linkedin: "LinkedIn",
       instagram: "Instagram",

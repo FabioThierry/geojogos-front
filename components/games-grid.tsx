@@ -9,16 +9,16 @@ interface GamesGridProps {
   games: Game[];
 }
 
-type FilterType = "all" | "digital" | "boardgame";
-type FilterCategory = "all" | "geography" | "interdisciplinary";
+type FilterType = "Todos" | "Digital" | "Jogo de Tabuleiro";
+type FilterCategory = "Todos" | "Geografia" | "Interdisciplinar";
 
 export function GamesGrid({ games }: GamesGridProps) {
-  const [typeFilter, setTypeFilter] = useState<FilterType>("all");
-  const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("all");
+  const [typeFilter, setTypeFilter] = useState<FilterType>("Todos");
+  const [categoryFilter, setCategoryFilter] = useState<FilterCategory>("Todos");
 
   const filteredGames = games.filter((game) => {
-    if (typeFilter !== "all" && game.type !== typeFilter) return false;
-    if (categoryFilter !== "all" && game.category !== categoryFilter)
+    if (typeFilter !== "Todos" && game.type !== typeFilter) return false;
+    if (categoryFilter !== "Todos" && game.category !== categoryFilter)
       return false;
     return true;
   });
@@ -29,27 +29,27 @@ export function GamesGrid({ games }: GamesGridProps) {
       <div className="mb-8 flex flex-wrap gap-4">
         <div className="space-y-2">
           <span className="text-sm font-medium text-muted-foreground">
-            Type
+            Tipo
           </span>
           <div className="flex gap-2">
             <Button
-              variant={typeFilter === "all" ? "default" : "outline"}
+              variant={typeFilter === "Todos" ? "default" : "outline"}
               size="sm"
-              onClick={() => setTypeFilter("all")}
+              onClick={() => setTypeFilter("Todos")}
               className={
-                typeFilter === "all"
+                typeFilter === "Todos"
                   ? "bg-primary hover:bg-primary-dark text-primary-foreground"
                   : "border-border hover:border-primary hover:text-primary"
               }
             >
-              All
+              Todos
             </Button>
             <Button
-              variant={typeFilter === "digital" ? "default" : "outline"}
+              variant={typeFilter === "Digital" ? "default" : "outline"}
               size="sm"
-              onClick={() => setTypeFilter("digital")}
+              onClick={() => setTypeFilter("Digital")}
               className={
-                typeFilter === "digital"
+                typeFilter === "Digital"
                   ? "bg-primary hover:bg-primary-dark text-primary-foreground"
                   : "border-border hover:border-primary hover:text-primary"
               }
@@ -57,61 +57,63 @@ export function GamesGrid({ games }: GamesGridProps) {
               Digital
             </Button>
             <Button
-              variant={typeFilter === "boardgame" ? "default" : "outline"}
+              variant={
+                typeFilter === "Jogo de Tabuleiro" ? "default" : "outline"
+              }
               size="sm"
-              onClick={() => setTypeFilter("boardgame")}
+              onClick={() => setTypeFilter("Jogo de Tabuleiro")}
               className={
-                typeFilter === "boardgame"
+                typeFilter === "Jogo de Tabuleiro"
                   ? "bg-primary hover:bg-primary-dark text-primary-foreground"
                   : "border-border hover:border-primary hover:text-primary"
               }
             >
-              Board Game
+              Jogo de Tabuleiro
             </Button>
           </div>
         </div>
         <div className="space-y-2">
           <span className="text-sm font-medium text-muted-foreground">
-            Category
+            Categoria
           </span>
           <div className="flex gap-2">
             <Button
-              variant={categoryFilter === "all" ? "default" : "outline"}
+              variant={categoryFilter === "Todos" ? "default" : "outline"}
               size="sm"
-              onClick={() => setCategoryFilter("all")}
+              onClick={() => setCategoryFilter("Todos")}
               className={
-                categoryFilter === "all"
+                categoryFilter === "Todos"
                   ? "bg-primary hover:bg-primary-dark text-primary-foreground"
                   : "border-border hover:border-primary hover:text-primary"
               }
             >
-              All
+              Todos
             </Button>
             <Button
-              variant={categoryFilter === "geography" ? "default" : "outline"}
+              variant={categoryFilter === "Geografia" ? "default" : "outline"}
               size="sm"
-              onClick={() => setCategoryFilter("geography")}
+              onClick={() => setCategoryFilter("Geografia")}
               className={
-                categoryFilter === "geography"
+                categoryFilter === "Geografia"
                   ? "bg-primary hover:bg-primary-dark text-primary-foreground"
                   : "border-border hover:border-primary hover:text-primary"
               }
             >
-              Geography
+              Geografia
             </Button>
             <Button
               variant={
-                categoryFilter === "interdisciplinary" ? "default" : "outline"
+                categoryFilter === "Interdisciplinar" ? "default" : "outline"
               }
               size="sm"
-              onClick={() => setCategoryFilter("interdisciplinary")}
+              onClick={() => setCategoryFilter("Interdisciplinar")}
               className={
-                categoryFilter === "interdisciplinary"
+                categoryFilter === "Interdisciplinar"
                   ? "bg-primary hover:bg-primary-dark text-primary-foreground"
                   : "border-border hover:border-primary hover:text-primary"
               }
             >
-              Interdisciplinary
+              Interdisciplinar
             </Button>
           </div>
         </div>
@@ -119,7 +121,7 @@ export function GamesGrid({ games }: GamesGridProps) {
 
       {/* Results Count */}
       <p className="mb-6 text-sm text-muted-foreground">
-        Showing {filteredGames.length} game
+        Mostrando {filteredGames.length} jogo
         {filteredGames.length !== 1 ? "s" : ""}
       </p>
 
@@ -133,17 +135,17 @@ export function GamesGrid({ games }: GamesGridProps) {
       ) : (
         <div className="py-12 text-center">
           <p className="text-muted-foreground">
-            No games found matching your filters.
+            Nenhum jogo encontrado com os filtros selecionados.
           </p>
           <Button
             variant="outline"
             className="mt-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
             onClick={() => {
-              setTypeFilter("all");
-              setCategoryFilter("all");
+              setTypeFilter("Todos");
+              setCategoryFilter("Todos");
             }}
           >
-            Clear Filters
+            Limpar Filtros
           </Button>
         </div>
       )}
