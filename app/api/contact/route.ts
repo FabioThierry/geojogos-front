@@ -137,11 +137,11 @@ export async function POST(request: NextRequest) {
 
     const resend = new Resend(resendApiKey);
     const emailResult = await resend.emails.send({
-      from: "contact@yourdomain.com", // Replace with your verified domain
-      to: "your-email@example.com", // Replace with your email
+      from: "fabio@geojogos.com.br", // Replace with your verified domain
+      to: "fabio@geojogos.com.br", // Replace with your email
       subject: `Contato: ${sanitizedSubject}`,
       html: `
-        <h2>Nova mensagem de contato</h2>
+        <h2>Nova mensagem de contato || GeoJogos ||</h2>
         <p><strong>Nome:</strong> ${sanitizedName}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Assunto:</strong> ${sanitizedSubject}</p>
