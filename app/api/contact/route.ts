@@ -1,12 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import DOMPurify from "dompurify";
-import { JSDOM } from "jsdom";
 import { Resend } from "resend";
 
-// Initialize DOMPurify with JSDOM
-const window = new JSDOM("").window;
-const DOMPurifyServer = DOMPurify(window);
+// Simple HTML escape sanitizer (server-side; avoids jsdom/dompurify ESM/CJS mismatch)
+function escapeHtml(input: string): string {
+  return input
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function sanitizeInput(input: string): string {
+  return escapeHtml(input).trim();
+}
 
 // Zod schema for contact form
 const contactSchema = z.object({
@@ -74,11 +82,7 @@ async function verifyRecaptcha(token: string): Promise<boolean> {
   }
 }
 
-function sanitizeInput(input: string): string {
-  // Sanitize HTML and trim
-  return DOMPurifyServer.sanitize(input).trim();
-}
-
+// NOTE: sanitizeInput already defined above using escapeHtml().
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
