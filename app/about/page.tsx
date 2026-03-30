@@ -32,13 +32,14 @@ export default async function AboutPage() {
                 {aboutData.hero.lead}
               </p>
             </div>
-            <div className="relative">
+            <div className="relative max-w-md mx-auto lg:mx-0">
               <Image
                 src={aboutData.hero.image}
                 alt={aboutData.hero.imageAlt}
-                width={500}
-                height={400}
-                className="rounded-2xl shadow-xl"
+                width={720}
+                height={715}
+                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
@@ -245,29 +246,29 @@ export default async function AboutPage() {
       {/* CTA */}
       <section className="py-20 ">
         <div className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
-        <h2 className="text-3xl font-bold text-foreground md:text-4xl">
-          {aboutData.cta.title}
-        </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          {aboutData.cta.subtitle}
-        </p>
-        <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
-          <Button
-            asChild
-            size="lg"
-            className="bg-primary hover:bg-primary-dark text-primary-foreground"
-          >
-            <Link href="/custom-projects">{aboutData.cta.primary}</Link>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
-          >
-            <Link href="/contact">{aboutData.cta.secondary}</Link>
-          </Button>
-        </div>
+          <h2 className="text-3xl font-bold text-foreground md:text-4xl">
+            {aboutData.cta.title}
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            {aboutData.cta.subtitle}
+          </p>
+          <div className="mt-8 flex flex-col justify-center gap-4 sm:flex-row">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary-dark text-primary-foreground"
+            >
+              <Link href="/custom-projects">{aboutData.cta.primary}</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+            >
+              <Link href="/contact">{aboutData.cta.secondary}</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </div>

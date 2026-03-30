@@ -35,6 +35,8 @@ export function ContactForm() {
   const [error, setError] = useState<string | null>(null);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
+  const reCAPTCHASiteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY;
+
   const {
     register,
     handleSubmit,
@@ -171,11 +173,16 @@ export function ContactForm() {
       </div>
 
       <div className="space-y-2">
-        <ReCAPTCHA
-          sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-          onChange={onRecaptchaChange}
-        />
-        {!recaptchaToken && (
+        {!reCAPTCHASiteKey ? (
+          <div className="rounded-md border border-yellow-400 bg-yellow-50 p-3 text-sm text-yellow-700">
+            reCAPTCHA não configurado em NEXT_PUBLIC_RECAPTCHA_SITE_KEY.
+            Atualize as variáveis de ambiente no Vercel e reimplante.
+          </div>
+        ) : (
+          <ReCAPTCHA sitekey={reCAPTCHASiteKey} onChange={onRecaptchaChange} />
+        )}
+
+        {!recaptchaToken && reCAPTCHASiteKey && (
           <p className="text-sm text-muted-foreground">
             Complete a verificação para enviar a mensagem.
           </p>
@@ -186,7 +193,7 @@ export function ContactForm() {
         type="submit"
         size="lg"
         className="w-full bg-primary hover:bg-primary-dark text-primary-foreground"
-        disabled={isLoading || !recaptchaToken}
+        disabled={isLoading || !recaptchaToken || !reCAPTCHASiteKey}
       >
         {isLoading ? "Enviando..." : "Enviar Mensagem"}
       </Button>

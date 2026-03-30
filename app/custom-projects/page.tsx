@@ -49,13 +49,14 @@ export default async function CustomProjectsPage() {
                 <Link href="/contact">{customProjectsData.hero.cta}</Link>
               </Button>
             </div>
-            <div className="relative">
+            <div className="relative max-w-md mx-auto lg:mx-0">
               <Image
                 src={customProjectsData.hero.image}
                 alt={customProjectsData.hero.imageAlt}
-                width={500}
-                height={400}
-                className="rounded-2xl shadow-xl"
+                width={400}
+                height={300}
+                className="rounded-2xl shadow-xl w-full h-auto object-cover"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
           </div>
