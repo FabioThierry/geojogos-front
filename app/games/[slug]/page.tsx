@@ -70,14 +70,14 @@ export default async function GamePage({ params }: GamePageProps) {
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Cover Image */}
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
+          <div className="relative w-full overflow-hidden rounded-2xl aspect-video sm:aspect-4/3">
             <Image
-              src={game.coverImage || "/placeholder.svg"}
+              src={game.coverImage}
               alt={game.title}
               fill
-              className="object-cover"
+              className="object-cover object-center"
               priority
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
             <div className="absolute top-4 left-4 flex gap-2">
               <Badge

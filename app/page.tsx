@@ -70,6 +70,7 @@ export default async function HomePage() {
                   src="/images/20190827_145807.jpg"
                   alt="GeoJogos - Jogos Educacionais"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover object-[10%_90%] origin-[42%_65%] transition-transform duration-500 delay-300 ease-out group-hover:scale-[1.5] group-hover:rotate-3"
                   priority
                 />
