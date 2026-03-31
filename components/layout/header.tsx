@@ -19,7 +19,7 @@ export function Header({ navData }: HeaderProps) {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 lg:px-8">
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/images/geojogos-20-283-29.png"
+            src="/images/geojogos-logo.png"
             alt="Logo GeoJogos"
             width={48}
             height={48}
