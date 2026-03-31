@@ -70,7 +70,7 @@ export default async function GamePage({ params }: GamePageProps) {
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Cover Image */}
-          <div className="relative aspect-4/3 overflow-hidden rounded-2xl">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-2xl">
             <Image
               src={game.coverImage || "/placeholder.svg"}
               alt={game.title}

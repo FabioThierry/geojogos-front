@@ -129,6 +129,13 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    overflow-x: hidden;
+  }
+  img,
+  svg,
+  video {
+    max-width: 100%;
+    height: auto;
   }
   h1,
   h2,

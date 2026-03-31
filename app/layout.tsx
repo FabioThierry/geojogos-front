@@ -68,7 +68,7 @@ export default async function RootLayout({
     <html lang="pt-BR" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="font-sans antialiased">
         <Header navData={navData} />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen overflow-x-hidden">{children}</main>
         <Footer footerData={footerData} />
         <Analytics />
       </body>

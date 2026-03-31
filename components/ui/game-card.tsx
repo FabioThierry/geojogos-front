@@ -22,14 +22,14 @@ export function GameCard({ game }: GameCardProps) {
         />
         <div className="absolute top-3 left-3 flex gap-2">
           <Badge
-            variant={game.type === "digital" ? "default" : "secondary"}
+            variant={game.type === "Digital" ? "default" : "secondary"}
             className={
-              game.type === "digital"
+              game.type === "Digital"
                 ? "bg-primary text-primary-foreground"
                 : "bg-foreground text-background"
             }
           >
-            {game.type === "digital" ? "Digital" : "Jogo de Tabuleiro"}
+            {game.type === "Digital" ? "Digital" : "Jogo de Tabuleiro"}
           </Badge>
         </div>
       </div>
