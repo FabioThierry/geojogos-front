@@ -77,6 +77,7 @@ export default async function GamePage({ params }: GamePageProps) {
               fill
               className="object-cover"
               priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
             <div className="absolute top-4 left-4 flex gap-2">
               <Badge

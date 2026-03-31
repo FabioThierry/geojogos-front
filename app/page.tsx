@@ -103,8 +103,8 @@ export default async function HomePage() {
               alt="Alunos jogando jogos educacionais"
               width={600}
               height={500}
-              autoFocus
               className="rounded-2xl shadow-xl"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
         </div>
@@ -222,6 +222,7 @@ export default async function HomePage() {
                 width={120}
                 height={60}
                 className="h-12 w-auto object-contain"
+                sizes="(max-width: 768px) 80px, 120px"
               />
             </div>
           ))}

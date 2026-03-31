@@ -18,6 +18,7 @@ export function GameCard({ game }: GameCardProps) {
           alt={game.title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-105"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
         />
         <div className="absolute top-3 left-3 flex gap-2">
           <Badge
