@@ -133,7 +133,7 @@ export default async function GamePage({ params }: GamePageProps) {
                     <p className="text-xs text-muted-foreground">Formato</p>
                     <p className="font-medium text-foreground">
                       {game.type === "Digital"
-                        ? "Jogo Digital"
+                        ? "Digital"
                         : "Jogo de Tabuleiro"}
                     </p>
                   </div>

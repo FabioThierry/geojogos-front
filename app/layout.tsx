@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     "professores",
   ],
   authors: [{ name: "GeoJogos" }],
-  generator: "v0.app",
+  generator: "Fábio Thierry",
   openGraph: {
     type: "website",
     locale: "pt_BR",
