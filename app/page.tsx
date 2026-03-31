@@ -6,6 +6,8 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { GameCard } from "@/components/ui/game-card";
 import { getHomePageData, getFeaturedGames } from "@/lib/data-access";
 import { IconRenderer } from "@/components/ui/icon-renderer";
+import { StructuredData } from "@/components/ui/structured-data";
+import { getWebPageSchema, getServiceSchema } from "@/lib/schemas";
 import {
   Cpu,
   Box,
@@ -23,8 +25,22 @@ export default async function HomePage() {
   const homeData = await getHomePageData();
   const featuredGames = await getFeaturedGames();
 
+  const homePageSchema = getWebPageSchema(
+    "GeoJogos - Jogos Educacionais para Geografia",
+    "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas.",
+    "https://geojogos.com.br",
+    [{ name: "Home", url: "https://www.geojogos.com.br" }],
+  );
+
   return (
     <div>
+      <StructuredData schema={homePageSchema} />
+      <StructuredData
+        schema={getServiceSchema(
+          "Desenvolvimento de Jogos Educacionais",
+          "Criamos jogos digitais e analógicos personalizados para educação em Geografia em escolas e instituições.",
+        )}
+      />
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-linear-to-br from-primary-muted via-background to-background">
         <div className="absolute inset-0 opacity-5">

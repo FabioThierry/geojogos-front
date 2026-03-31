@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { IconRenderer } from "@/components/ui/icon-renderer";
 import { getContactPageData } from "@/lib/data-access";
+import { StructuredData } from "@/components/ui/structured-data";
+import { getWebPageSchema, getLocalBusinessSchema } from "@/lib/schemas";
 
 export async function generateMetadata(): Promise<Metadata> {
   const contactData = await getContactPageData();
@@ -46,8 +48,20 @@ export default async function ContactPage() {
   const titleParts = contactData.hero.title.split(" ");
   const lastWord = titleParts.pop();
 
+  const contactPageSchema = getWebPageSchema(
+    "Contato - GeoJogos",
+    "Entre em contato conosco para projetos personalizados, parcerias e colaborações",
+    "https://geojogos.com/contact",
+    [
+      { name: "Home", url: "https://geojogos.com" },
+      { name: "Contato", url: "https://geojogos.com/contact" },
+    ],
+  );
+
   return (
     <div>
+      <StructuredData schema={contactPageSchema} />
+      <StructuredData schema={getLocalBusinessSchema()} />
       {/* Hero */}
       <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">

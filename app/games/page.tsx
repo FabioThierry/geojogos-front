@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { getGamesPageData, getAllGames } from "@/lib/data-access";
 import { GamesGrid } from "@/components/games-grid";
+import { StructuredData } from "@/components/ui/structured-data";
+import { getWebPageSchema, getServiceSchema } from "@/lib/schemas";
 
 export async function generateMetadata(): Promise<Metadata> {
   const gamesPageData = await getGamesPageData();
@@ -14,8 +16,26 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function GamesPage() {
   const gamesPageData = await getGamesPageData();
   const games = await getAllGames();
+
+  const gamesPageSchema = getWebPageSchema(
+    "Jogos Educacionais - GeoJogos",
+    "Conheça nossa coleção de jogos educacionais personalizados para ensino de Geografia",
+    "https://www.geojogos.com.br/games",
+    [
+      { name: "Home", url: "https://www.geojogos.com.br" },
+      { name: "Jogos", url: "https://www.geojogos.com.br/games" },
+    ],
+  );
+
   return (
     <div>
+      <StructuredData schema={gamesPageSchema} />
+      <StructuredData
+        schema={getServiceSchema(
+          "Catálogo de Jogos Educacionais",
+          "Coleção completa de jogos educacionais para Geografia",
+        )}
+      />
       {/* Hero */}
       <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 text-center lg:px-8">

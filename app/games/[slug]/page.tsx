@@ -6,6 +6,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { getGameBySlug, generateGameStaticParams } from "@/lib/data-access";
+import { StructuredData } from "@/components/ui/structured-data";
+import { getGameSchema, getWebPageSchema } from "@/lib/schemas";
 import {
   Target,
   Users,
@@ -50,8 +52,29 @@ export default async function GamePage({ params }: GamePageProps) {
     notFound();
   }
 
+  const gameSchema = getGameSchema(
+    game.title,
+    game.shortDescription,
+    game.coverImage || "",
+    4.8,
+    0,
+  );
+
+  const gamePageSchema = getWebPageSchema(
+    game.title,
+    game.shortDescription,
+    `https://geojogos.com/games/${slug}`,
+    [
+      { name: "Home", url: "https://geojogos.com" },
+      { name: "Jogos", url: "https://geojogos.com/games" },
+      { name: game.title, url: `https://geojogos.com/games/${slug}` },
+    ],
+  );
+
   return (
     <div>
+      <StructuredData schema={gameSchema} />
+      <StructuredData schema={gamePageSchema} />
       {/* Back Button */}
       <div className="mx-auto max-w-7xl px-4 pt-8 lg:px-8">
         <Button
@@ -77,7 +100,7 @@ export default async function GamePage({ params }: GamePageProps) {
               fill
               className="object-cover object-center"
               priority
-              sizes="(max-width: 640px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              sizes="(max-width: 540px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
             <div className="absolute top-4 left-4 flex gap-2">
               <Badge

@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { IconRenderer } from "@/components/ui/icon-renderer";
 import { getAboutPageData } from "@/lib/data-access";
+import { StructuredData } from "@/components/ui/structured-data";
+import { getWebPageSchema, getOrganizationSchema } from "@/lib/schemas";
 
 export async function generateMetadata(): Promise<Metadata> {
   const aboutData = await getAboutPageData();
@@ -18,8 +20,21 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AboutPage() {
   const aboutData = await getAboutPageData();
+
+  const aboutPageSchema = getWebPageSchema(
+    "Sobre GeoJogos",
+    "Conheça a história, missão e valores da GeoJogos",
+    "https://www.geojogos.com.br/about",
+    [
+      { name: "Home", url: "https://www.geojogos.com.br" },
+      { name: "Sobre", url: "https://www.geojogos.com.br/about" },
+    ],
+  );
+
   return (
     <div>
+      <StructuredData schema={aboutPageSchema} />
+      <StructuredData schema={getOrganizationSchema()} />
       {/* Hero */}
       <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">

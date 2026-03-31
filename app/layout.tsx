@@ -6,6 +6,11 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { getNavigationData, getFooterData } from "@/lib/data-access";
+import { StructuredData } from "@/components/ui/structured-data";
+import {
+  getOrganizationSchema,
+  getEducationalOrganizationSchema,
+} from "@/lib/schemas";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
@@ -15,6 +20,7 @@ const merriweather = Merriweather({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.geojogos.com.br"),
   title: {
     default: "GeoJogos - Jogos Educacionais para Geografia",
     template: "%s | GeoJogos",
@@ -29,13 +35,57 @@ export const metadata: Metadata = {
     "jogos personalizados",
     "escolas",
     "professores",
+    "estúdio de jogos",
+    "games educativos",
+    "ensino de geografia",
   ],
   authors: [{ name: "GeoJogos" }],
+  creator: "Fábio Thierry",
   generator: "Fábio Thierry",
+  robots: {
+    index: true,
+    follow: true,
+    "max-image-preview": "large",
+    "max-snippet": -1,
+    "max-video-preview": -1,
+    googleBot: "index, follow",
+  },
+  alternates: {
+    canonical: "https://geojogos.com",
+  },
   openGraph: {
     type: "website",
     locale: "pt_BR",
+    url: "https://geojogos.com",
     siteName: "GeoJogos",
+    title: "GeoJogos - Jogos Educacionais para Geografia",
+    description:
+      "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas.",
+    images: [
+      {
+        url: "https://geojogos.com/images/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "GeoJogos - Jogos Educacionais para Geografia",
+        type: "image/jpeg",
+      },
+      {
+        url: "https://geojogos.com/images/og-image-square.jpg",
+        width: 800,
+        height: 800,
+        alt: "GeoJogos - Jogos Educacionais",
+        type: "image/jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@geojogos",
+    creator: "@geojogos",
+    title: "GeoJogos - Jogos Educacionais para Geografia",
+    description:
+      "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas.",
+    images: ["https://geojogos.com/images/og-image.jpg"],
   },
   icons: {
     icon: [
@@ -66,6 +116,10 @@ export default async function RootLayout({
 
   return (
     <html lang="pt-BR" className={`${inter.variable} ${merriweather.variable}`}>
+      <head>
+        <StructuredData schema={getOrganizationSchema()} />
+        <StructuredData schema={getEducationalOrganizationSchema()} />
+      </head>
       <body className="font-sans antialiased">
         <Header navData={navData} />
         <main className="min-h-screen">{children}</main>

@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { IconRenderer } from "@/components/ui/icon-renderer";
 import { getCustomProjectsPageData } from "@/lib/data-access";
+import { StructuredData } from "@/components/ui/structured-data";
+import { getWebPageSchema, getServiceSchema } from "@/lib/schemas";
 
 export async function generateMetadata(): Promise<Metadata> {
   const customProjectsData = await getCustomProjectsPageData();
@@ -28,8 +30,29 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function CustomProjectsPage() {
   const customProjectsData = await getCustomProjectsPageData();
+
+  const customProjectsPageSchema = getWebPageSchema(
+    "Projetos Personalizados - GeoJogos",
+    "Desenvolva jogos educacionais personalizados para sua escola ou instituição",
+    "https://www.geojogos.com.br/custom-projects",
+    [
+      { name: "Home", url: "https://www.geojogos.com.br" },
+      {
+        name: "Projetos Personalizados",
+        url: "https://www.geojogos.com.br/custom-projects",
+      },
+    ],
+  );
+
   return (
     <div>
+      <StructuredData schema={customProjectsPageSchema} />
+      <StructuredData
+        schema={getServiceSchema(
+          "Desenvolvimento de Jogos Personalizados",
+          "Serviço de desenvolvimento de jogos educacionais personalizados para escolas e instituições",
+        )}
+      />
       {/* Hero */}
       <section className="bg-linear-to-br from-primary-muted via-background to-background py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">

@@ -1,0 +1,33 @@
+# Robots.txt for GeoJogos
+# Allow search engines to crawl and index content
+
+User-agent: *
+Allow: /
+Allow: /games
+Allow: /about
+Allow: /custom-projects
+Allow: /contact
+
+# Disallow private/admin paths
+Disallow: /api/
+Disallow: /admin/
+Disallow: /*.json$
+Disallow: /*?*sort=
+Disallow: /*?*filter=
+
+# Sitemap location
+Sitemap: https://www.geojogos.com.br/sitemap.xml
+Sitemap: https://geojogos.com.br/sitemap-games.xml
+
+# Google-specific crawl delay (faster crawling)
+User-agent: Googleboostrap
+Crawl-delay: 0
+
+# Bing-specific settings
+User-agent: Bingbot
+Crawl-delay: 1
+
+# Other bots - respectful crawl delay
+User-agent: *
+Crawl-delay: 1
+Request-rate: 30/60
