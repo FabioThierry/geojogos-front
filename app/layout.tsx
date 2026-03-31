@@ -51,42 +51,42 @@ export const metadata: Metadata = {
     googleBot: "index, follow",
   },
   alternates: {
-    canonical: "https://geojogos.com",
+    canonical: "https://www.geojogos.com.br",
   },
   openGraph: {
     type: "website",
     locale: "pt_BR",
-    url: "https://geojogos.com",
+    url: "https://www.geojogos.com.br",
     siteName: "GeoJogos",
     title: "GeoJogos - Jogos Educacionais para Geografia",
     description:
       "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas.",
     images: [
       {
-        url: "https://geojogos.com/images/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "https://www.geojogos.com.br/images/og-image.jpg",
+        width: 4128,
+        height: 3096,
         alt: "GeoJogos - Jogos Educacionais para Geografia",
         type: "image/jpeg",
       },
       {
-        url: "https://geojogos.com/images/og-image-square.jpg",
-        width: 800,
-        height: 800,
+        url: "https://www.geojogos.com.br/images/og-image-square.jpg",
+        width: 500,
+        height: 500,
         alt: "GeoJogos - Jogos Educacionais",
         type: "image/jpeg",
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    site: "@geojogos",
-    creator: "@geojogos",
-    title: "GeoJogos - Jogos Educacionais para Geografia",
-    description:
-      "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas.",
-    images: ["https://geojogos.com/images/og-image.jpg"],
-  },
+  // twitter: {
+  //   card: "summary_large_image",
+  //   site: "@geojogos",
+  //   creator: "@geojogos",
+  //   title: "GeoJogos - Jogos Educacionais para Geografia",
+  //   description:
+  //     "Criamos jogos digitais e analógicos personalizados para transformar a educação em Geografia nas escolas.",
+  //   images: ["https://geojogos.com/images/og-image.jpg"],
+  // },
   icons: {
     icon: [
       { url: "/images/favicon/favicon-16x16.png", type: "image/png" },

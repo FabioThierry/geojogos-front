@@ -26,6 +26,11 @@ export async function generateStaticParams() {
   return await generateGameStaticParams();
 }
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export async function generateMetadata({
   params,
 }: GamePageProps): Promise<Metadata> {
@@ -72,7 +77,7 @@ export default async function GamePage({ params }: GamePageProps) {
   );
 
   return (
-    <div>
+    <div className="">
       <StructuredData schema={gameSchema} />
       <StructuredData schema={gamePageSchema} />
       {/* Back Button */}
@@ -80,10 +85,10 @@ export default async function GamePage({ params }: GamePageProps) {
         <Button
           asChild
           variant="ghost"
-          className="gap-2 text-muted-foreground hover:text-primary"
+          className="gap-2 text-muted-foreground hover:text-primary max-w-full overflow-hidden"
         >
-          <Link href="/games">
-            <ArrowLeft className="h-4 w-4" />
+          <Link href="/games" className="truncate">
+            <ArrowLeft className="h-4 w-4 shrink-0" />
             Voltar para Jogos
           </Link>
         </Button>
@@ -91,16 +96,16 @@ export default async function GamePage({ params }: GamePageProps) {
 
       {/* Hero */}
       <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-4 sm:gap-8 lg:gap-12 lg:grid-cols-2 lg:items-center">
           {/* Cover Image */}
-          <div className="relative w-full overflow-hidden rounded-2xl aspect-video sm:aspect-4/3">
+          <div className="relative w-full overflow-hidden rounded-2xl aspect-4/3">
             <Image
               src={game.coverImage}
               alt={game.title}
               fill
               className="object-cover object-center"
               priority
-              sizes="(max-width: 540px) 100vw, (max-width: 1200px) 50vw, 50vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
             />
             <div className="absolute top-4 left-4 flex gap-2">
               <Badge
@@ -124,37 +129,37 @@ export default async function GamePage({ params }: GamePageProps) {
           </div>
 
           {/* Game Info */}
-          <div>
-            <h1 className="text-3xl font-bold text-foreground md:text-4xl">
+          <div className="min-w-0">
+            <h1 className="text-3xl font-bold text-foreground md:text-4xl wrap-break-words">
               {game.title}
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-lg text-muted-foreground wrap-break-words">
               {game.shortDescription}
             </p>
 
             {/* Quick Info Cards */}
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <Card className="bg-muted/50">
-                <CardContent className="flex items-center gap-3 p-4">
-                  <Users className="h-5 w-5 text-primary" />
-                  <div>
+                <CardContent className="flex items-center gap-3 p-4 min-w-0">
+                  <Users className="h-5 w-5 text-primary shrink-0" />
+                  <div className="min-w-0">
                     <p className="text-xs text-muted-foreground">Nível Alvo</p>
-                    <p className="font-medium text-foreground">
+                    <p className="font-medium text-foreground wrap-break-words">
                       {game.targetLevel}
                     </p>
                   </div>
                 </CardContent>
               </Card>
               <Card className="bg-muted/50">
-                <CardContent className="flex items-center gap-3 p-4">
+                <CardContent className="flex items-center gap-3 p-4 min-w-0">
                   {game.type === "Digital" ? (
-                    <Monitor className="h-5 w-5 text-primary" />
+                    <Monitor className="h-5 w-5 text-primary shrink-0" />
                   ) : (
-                    <Puzzle className="h-5 w-5 text-primary" />
+                    <Puzzle className="h-5 w-5 text-primary shrink-0" />
                   )}
-                  <div>
+                  <div className="min-w-0">
                     <p className="text-xs text-muted-foreground">Formato</p>
-                    <p className="font-medium text-foreground">
+                    <p className="font-medium text-foreground wrap-break-words">
                       {game.type === "Digital"
                         ? "Digital"
                         : "Jogo de Tabuleiro"}
@@ -169,9 +174,9 @@ export default async function GamePage({ params }: GamePageProps) {
               <Button
                 asChild
                 size="lg"
-                className="w-full bg-primary hover:bg-primary-dark text-primary-foreground sm:w-auto"
+                className="w-full bg-primary hover:bg-primary-dark text-primary-foreground sm:w-auto max-w-full overflow-hidden"
               >
-                <Link href="/custom-projects">
+                <Link href="/custom-projects" className="truncate">
                   Solicitar uma Versão Personalizada deste Jogo
                 </Link>
               </Button>
@@ -183,10 +188,10 @@ export default async function GamePage({ params }: GamePageProps) {
       {/* Full Description */}
       <section className="bg-muted py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">
+          <h2 className="text-2xl font-bold text-foreground wrap-break-words">
             Sobre este Jogo
           </h2>
-          <p className="mt-4 text-muted-foreground leading-relaxed">
+          <p className="mt-4 text-muted-foreground leading-relaxed wrap-break-words">
             {game.fullDescription}
           </p>
         </div>
@@ -194,14 +199,14 @@ export default async function GamePage({ params }: GamePageProps) {
 
       {/* Educational Objectives & Skills */}
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2">
+        <div className="grid gap-8 lg:gap-12 lg:grid-cols-2">
           {/* Educational Objectives */}
-          <div>
+          <div className="min-w-0">
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary">
                 <Target className="h-5 w-5 text-primary-foreground" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-2xl font-bold text-foreground wrap-break-words">
                 Objetivos Educacionais
               </h2>
             </div>
@@ -209,24 +214,24 @@ export default async function GamePage({ params }: GamePageProps) {
               {game.educationalObjectives.map((objective, index) => (
                 <li
                   key={index}
-                  className="flex items-start gap-3 text-muted-foreground"
+                  className="flex items-start gap-3 text-muted-foreground min-w-0"
                 >
                   <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary-muted text-xs font-medium text-primary">
                     {index + 1}
                   </span>
-                  {objective}
+                  <span className="wrap-break-words">{objective}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Skills Developed */}
-          <div>
+          <div className="min-w-0">
             <div className="mb-6 flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary">
                 <Brain className="h-5 w-5 text-primary-foreground" />
               </div>
-              <h2 className="text-2xl font-bold text-foreground">
+              <h2 className="text-2xl font-bold text-foreground wrap-break-words">
                 Habilidades Desenvolvidas
               </h2>
             </div>
@@ -235,7 +240,7 @@ export default async function GamePage({ params }: GamePageProps) {
                 <Badge
                   key={index}
                   variant="outline"
-                  className="border-primary text-primary px-3 py-1"
+                  className="border-primary text-primary px-3 py-1 wrap-break-words max-w-full"
                 >
                   {skill}
                 </Badge>
@@ -248,15 +253,15 @@ export default async function GamePage({ params }: GamePageProps) {
       {/* How Teachers Can Use It */}
       <section className="bg-primary-muted py-16">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary">
+          <div className="flex items-center gap-3 mb-6 min-w-0">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary">
               <BookOpen className="h-5 w-5 text-primary-foreground" />
             </div>
-            <h2 className="text-2xl font-bold text-foreground">
+            <h2 className="text-2xl font-bold text-foreground  wrap-break-words">
               Como os Professores Podem Usar
             </h2>
           </div>
-          <p className="text-muted-foreground leading-relaxed max-w-4xl">
+          <p className="text-muted-foreground leading-relaxed max-w-4xl wrap-break-words">
             {game.howToUse}
           </p>
         </div>
@@ -264,19 +269,19 @@ export default async function GamePage({ params }: GamePageProps) {
 
       {/* CTA Section */}
       <section className="mx-auto max-w-4xl px-4 py-20 text-center lg:px-8">
-        <h2 className="text-3xl font-bold text-foreground">
+        <h2 className="text-3xl font-bold text-foreground wrap-break-words">
           Quer Este Jogo Personalizado para Sua Escola?
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
+        <p className="mt-4 text-lg text-muted-foreground wrap-break-words">
           Podemos adaptar este jogo para seu currículo específico, geografia
           local e objetivos educacionais.
         </p>
         <Button
           asChild
           size="lg"
-          className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground"
+          className="mt-8 bg-primary hover:bg-primary-dark text-primary-foreground max-w-full overflow-hidden"
         >
-          <Link href="/custom-projects">
+          <Link href="/custom-projects" className="truncate">
             Solicitar uma Versão Personalizada
           </Link>
         </Button>

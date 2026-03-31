@@ -83,7 +83,7 @@ export default async function HomePage() {
             <div className="relative hidden lg:block">
               <div className="group relative aspect-4/3 rounded-3xl overflow-hidden transition-transform duration-500 hover:rotate-3">
                 <Image
-                  src="/images/20190827_145807.jpg"
+                  src="/images/og-image.jpg"
                   alt="GeoJogos - Jogos Educacionais"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -122,6 +122,7 @@ export default async function HomePage() {
               height={500}
               className="rounded-2xl shadow-xl"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              style={{ height: "auto" }}
             />
           </div>
         </div>

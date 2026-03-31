@@ -23,7 +23,7 @@ export const games: Game[] = [
       "Jump in CG é uma aventura no calçadão às margens do Açude Velho.",
     fullDescription:
       "Jump In CG é um jogo digital educativo desenvolvido com o software Construct 2, como parte de uma iniciativa para promover o ensino de Geografia por meio de experiências interativas. Ambientado no Açude Velho, um ponto emblemático da cidade de Campina Grande (PB), o jogo convida os jogadores a explorarem esse espaço urbano, reconhecendo elementos geográficos, históricos e culturais. A proposta é que o jogador interaja com o cenário, identifique locais e compreenda a dinâmica urbana a partir de uma perspectiva lúdica e crítica.",
-    coverImage: "/jump-in-cg.png",
+    coverImage: "/jump-in-cg.jpg",
     type: "Digital",
     category: "Geografia",
     targetLevel: "Ensino Fundamental e Médio (6-9ª série)",
