@@ -6,7 +6,7 @@ export const navData: SiteNav = {
     { name: "Sobre", href: "/about" },
     { name: "Jogos", href: "/games" },
     { name: "Projetos Personalizados", href: "/custom-projects" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" }, // Blog desativado temporariamente
     { name: "Contato", href: "/contact" },
   ],
   contactButton: "Entre em Contato",

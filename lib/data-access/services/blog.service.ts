@@ -5,30 +5,19 @@
  * It decides whether to fetch from local files or Strapi CMS.
  *
  * Pages and components MUST use this service and never import directly from @/lib/data/blog.
+ *
+ * NOTE: Blog functionality is currently disabled. All functions return empty arrays/undefined.
  */
 
 import type { BlogPost } from "@/lib/data/types";
-import { getDataSource } from "../config";
-
-// Import local data provider
-import {
-  getLocalBlogPosts,
-  getLocalBlogPostBySlug,
-  getLocalRecentPosts,
-} from "../providers/local/blog";
 
 /**
  * Fetch all blog posts
  * @returns Promise<BlogPost[]> - Array of all blog posts
  */
 export async function getAllBlogPosts(): Promise<BlogPost[]> {
-  if (getDataSource() === "strapi") {
-    // TODO: Implement Strapi provider
-    // return getRemoteBlogPosts();
-    throw new Error("Strapi integration not yet implemented");
-  }
-
-  return getLocalBlogPosts();
+  // Blog is disabled - returning empty array
+  return [];
 }
 
 /**
@@ -37,15 +26,10 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
  * @returns Promise<BlogPost | undefined> - The blog post or undefined if not found
  */
 export async function getBlogPostBySlug(
-  slug: string
+  slug: string,
 ): Promise<BlogPost | undefined> {
-  if (getDataSource() === "strapi") {
-    // TODO: Implement Strapi provider
-    // return getRemoteBlogPostBySlug(slug);
-    throw new Error("Strapi integration not yet implemented");
-  }
-
-  return getLocalBlogPostBySlug(slug);
+  // Blog is disabled - returning undefined
+  return undefined;
 }
 
 /**
@@ -54,15 +38,10 @@ export async function getBlogPostBySlug(
  * @returns Promise<BlogPost[]> - Array of recent blog posts
  */
 export async function getRecentBlogPosts(
-  limit: number = 3
+  limit: number = 3,
 ): Promise<BlogPost[]> {
-  if (getDataSource() === "strapi") {
-    // TODO: Implement Strapi provider
-    // return getRemoteRecentPosts(limit);
-    throw new Error("Strapi integration not yet implemented");
-  }
-
-  return getLocalRecentPosts(limit);
+  // Blog is disabled - returning empty array
+  return [];
 }
 
 /**
@@ -71,8 +50,6 @@ export async function getRecentBlogPosts(
  * @returns Promise<{ slug: string }[]>
  */
 export async function generateBlogStaticParams(): Promise<{ slug: string }[]> {
-  const posts = await getAllBlogPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-  }));
+  // Blog is disabled - returning empty array
+  return [];
 }

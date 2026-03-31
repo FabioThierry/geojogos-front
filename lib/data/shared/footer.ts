@@ -14,7 +14,7 @@ export const footerData: Footer = {
       { name: "Sobre", href: "/about" },
       { name: "Jogos", href: "/games" },
       { name: "Projetos Personalizados", href: "/custom-projects" },
-      { name: "Blog", href: "/blog" },
+      // { name: "Blog", href: "/blog" },
       { name: "Contato", href: "/contact" },
     ],
   },
