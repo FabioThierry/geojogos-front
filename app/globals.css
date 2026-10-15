@@ -79,8 +79,8 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback", "Geist", "Geist Fallback";
-  --font-serif: "Merriweather", "Merriweather Fallback";
+  --font-sans: var(--font-inter), "inter Fallback", "Geist", "Geist Fallback";
+  --font-serif: var(--font-merriweather), "merriweather Fallback";
   --font-mono: "Geist Mono", "Geist Mono Fallback";
   --color-background: var(--background);
   --color-foreground: var(--foreground);

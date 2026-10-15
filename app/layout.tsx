@@ -1,6 +1,6 @@
 import type React from "react";
 import type { Metadata, Viewport } from "next";
-import { Inter, Merriweather } from "next/font/google";
+import localFont from "next/font/local";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
@@ -12,10 +12,20 @@ import {
   getEducationalOrganizationSchema,
 } from "@/lib/schemas";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["400", "700"],
+// Fontes locais (self-hosted). Não dependem de rede no build nem do Google Fonts.
+const inter = localFont({
+  src: "./fonts/Inter-Variable.woff2",
+  weight: "100 900",
+  style: "normal",
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const merriweather = localFont({
+  src: "./fonts/Merriweather-Variable.woff2",
+  weight: "400 700",
+  style: "normal",
+  display: "swap",
   variable: "--font-merriweather",
 });
 
