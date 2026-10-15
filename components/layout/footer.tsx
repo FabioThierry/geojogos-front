@@ -16,7 +16,7 @@ export function Footer({ footerData }: FooterProps) {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/images/geojogos-20-283-29.png"
+                src="/images/geojogos-logo.png"
                 alt={footerData.brand.logoAlt}
                 width={40}
                 height={40}
