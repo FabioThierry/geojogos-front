@@ -5,6 +5,7 @@
 [] adicionar a o cartao que trabalha com a criacao de aventuras para o minecraft education e adicionar a logo
 [] adicionar vídeo de como dos jogos desenvolvidos na página de cada jogo
 [] adicionar um vídeo resumo dos jogos na página inicial do site.
+[x] adicionar preview (Open Graph) nos links dos jogos para aparecer a imagem no WhatsApp — rodar "npm run games:og" após reexportar um jogo no Construct 3
 []  
 []
 []
