@@ -32,6 +32,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Static game builds (Construct 3 exports) - vendor bundles, not our source:
+    "public/**",
   ]),
 ]);
 

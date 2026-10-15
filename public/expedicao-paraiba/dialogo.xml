@@ -1,0 +1,313 @@
+<?xml version='1.0' ?>
+	
+	Apresentacao Menu
+	<chapter0>
+		<hint id='intro1'>Oi, tudo bem?</hint>
+		<hint id='intro2'>Meu nome é Chico</hint>
+		<hint id='intro3'>Meu nome é Chico, sou um geógrafo de outras bandas e estou aqui para conhecer o Estado da Paraíba.</hint>
+		<hint id='intro4'>Preciso de uma pessoa para percorrer o estado e coletar dados para a minha pesquisa exploratória, talvez você possa me ajudar</hint>
+		<hint id='intro5'>Vamos lá!</hint>
+		<hint id='intro6'>Acabei de chegar pelo Aeroporto Internacional de João Pessoa e aluguei um carro híbrido para servir de nossa locomoção</hint>
+		<hint id='intro7'>Ele conta com uma quantidade de bateria limitada que pode ser recarregada quando chegarmos ao nosso destino</hint>
+		<hint id='intro8'>Caso a carga da bateria chegue a zero ainda temos um pouco de combustível para nos locomovermos, mas a velocidade será reduzida</hint>
+		<hint id='intro9'>Fique de olho na bateria e vamos Simbora!</hint>
+		
+	</chapter0>
+	
+	//FinalMissao
+	<chapterFinalMissao>
+		<hint id='intro1'>Parabéns você chegou no Destino!</hint>
+	</chapterFinalMissao>	
+	
+//missao 1
+<chapter1>
+	<Saida>
+		<hint id='intro1'>Oi!</hint>
+		<hint id='intro2'>Vamos começar a nossa jornada!</hint>
+		<hint id='intro3'>Partiremos para nossa exploração de João Pessoa, Capital do Estado da Paraíba</hint>
+		<hint id='intro4'>Ela é a cidade mais populosa do Estado, com 723.515 habitantes contabilizados no último censo demográfico.</hint>
+		<hint id='intro5'>Em minhas leituras, descobri que aqui perto houve disputas pelo domínio das terras e que a construção do forte de Nossa Senhora das Neves, em 5 de agosto de 1585, deu origem à primeira edificação do que é João Pessoa.</hint>
+		<hint id='intro6'>É a terceira capital mais antiga de todo o Brasil.</hint>
+		<hint id='intro7'>João Pessoa possui uma das maiores florestas urbanas do mundo: o Jardim Botânico Benjamim Maranhão, que possui 515 hectares de Mata Atlântica preservada. Além de receber o título de cidades das Acácias.</hint>
+		<hint id='intro8'>Por fim, descobri que nessa região existia uma fronteira entre potiguaras e tabajaras.</hint>
+		<hint id='intro9'>Portanto nossa primeira parada é visitar o Território Indígena dos Índios Potiguaras.</hint>
+		<hint id='intro10'>Pelas minhas leituras eles são os primeiros donos do litoral paraibano, mas com o domínio dos portugueses e os diversos aldeamentos com o passar dos anos suas terras ficaram cada vez menores.</hint>
+		<hint id='intro11'>Então vamos visitar o primeiro aldeamento, área que ainda resiste pelo domínio dos potiguaras.</hint>
+		<hint id='intro12'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro13'>Dirija até o município de Baía da Traição, no litoral norte paraibano.</hint>
+	</Saida>
+		
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Olha só! Descobri que o município está muito envolvido com o turismo por conta de suas belas praias.</hint>
+		<hint id='intro4'>Perto do município de Baía da Traição funciona o projeto de proteção do Peixe-boi.</hint>
+		<hint id='intro5'>O Peixe-boi Marinho é um dos mamíferos aquáticos mais ameaçados de extinção no Brasil.</hint>
+		<hint id='intro6'>O projeto fica localizado na foz do rio Mamanguape, este que dá nome a cidade e ao município de Mamanguape. Os quais estão atrelados às dinâmicas da bacia hidrográfica e do rio Mamanguape.</hint>
+		<hint id='intro7'>A vegetação aqui perto é bem diversificada. É encontrada próximo ao litoral uma vegetação típica de restinga e ao longo do estuário do rio Mamanguape é caracterizado pela grande presença de vegetação de mangue.</hint>
+		<hint id='intro8'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro9'>Só um momento…</hint>
+		<hint id='intro10'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro11'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter1>	
+	
+	
+//missao 2
+<chapter2>
+	<Saida>
+		<hint id='intro1'>Nosso próximo objetivo é voltar para o Município de Mamanguape, mas antes que tal passar por algumas praias e passeios ecológicos perto do município de Mataraca?</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Mataraca, em sequência, vá para Mamanguape.</hint>
+		<hint id='intro4'>Nosso próximo objetivo é voltar para o Município de Mamanguape, mas antes que tal passar por algumas praias e passeios ecológicos perto do município de Mataraca?</hint>
+		<hint id='intro5'>Dirija até o município de  Mataraca e depois Mamanguape</hint>
+	</Saida>
+		
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Na Mesorregião da Mata Paraibana é comum encontrar muitos engenhos antigos.</hint>
+		<hint id='intro4'>Estes que funcionavam para produzir derivados das plantações de cana-de-açúcar, que tomavam, e ainda tomam, uma expressiva área da zona da mata paraibana.</hint>
+		<hint id='intro5'>Mamanguape é considerada a segunda cidade mais fria do Estado, perdendo apenas para Solânea.</hint>
+		<hint id='intro6'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro7'>Só um momento…</hint>
+		<hint id='intro8'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro9'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter2>	
+	
+	
+//missao 3
+<chapter3>
+	<Saida>	
+		<hint id='intro1'>Vamos continuar conhecendo ao Estado subindo o curso da bacia do rio Mamanguape e adentrando na Mesorregião de Guarabira, onde também iremos subir o Planalto da Borborema.</hint>
+		<hint id='intro2'>Nesse percurso iremos passar espécies vegetativas um pouco diferentes das que encontramos no Litoral do Estado. </hint>
+		<hint id='intro3'>Para visualizar as vegetações ative o botão "Vegetação".</hint>
+		<hint id='intro4'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro5'>Vamos visitar novas paisagens, dirija até o município de Areia.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro1'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro2'>O município de Areia está localizado na Microrregião do Brejo Paraibano que, por conta de sua altitude, possui uma vegetação que expressa muitas semelhanças com a do litoral.</hint>
+		<hint id='intro3'>Assim como no município de Mamanguape, aqui também possui engenhos antigos em Areia.</hint>
+		<hint id='intro4'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro5'>Só um momento…</hint>
+		<hint id='intro6'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro7'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter3>	
+	
+	//missao 4
+<chapter4>
+	<Saida>	
+		<hint id='intro1'>A Microrregião Brejo Paraibano e a Microrregião de Esperança são vizinhas, que tal visitar o Município de Esperança?</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Esperança.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro1'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro2'>Segundo as minhas leituras, atualmente o Instituto Brasileiro de Geografia e Estatística - IBGE, realizou uma nova regionalização em Regiões Geográficas Intermediárias e Imediatas.</hint>
+		<hint id='intro3'>Cujo o foco é relacionar as articulações intermunicipais organizando em diferentes escalas.</hint>
+		<hint id='intro4'>Dessa forma, o município de Esperança está integrado nas regiões Imediata e Intermediária de Campina Grande.</hint>
+		<hint id='intro5'>Para visualizar as diferentes regionalizações ative o botão "Regionalização".</hint>
+		<hint id='intro6'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro7'>Só um momento…</hint>
+		<hint id='intro8'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro9'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+
+</chapter4>	
+	
+	//missao 5
+<chapter5>
+	<Saida>	
+		<hint id='intro1'>Por falar em Campina Grande, o que acha de irmos em direção a esse município?</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até Campina Grande, terra do maior São João do mundo.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Chegamos em Campina, uma parada importantíssima para na rota dos antigos Tropeiros da Borborema.</hint>
+		<hint id='intro4'>Transportavam mantimentos como farinha, milho e carne seca com o auxílio de mulas e jumentos.</hint>
+		<hint id='intro5'>A cidade de Campina Grande ficou muito conhecida por celebrar os festejos de São João e anualmente realiza a festa do Maior São João do Mundo!</hint>
+		<hint id='intro6'>Além disso, denota algumas transformações vegetacionais, pois estamos em faixa de transição que faz a ponte entre uma porção úmida e outra seca do Estado.</hint>
+		<hint id='intro7'>Isso é atrelado ao domínio climático que muda da faixa próxima ao litoral de “As” (Quente e úmido) para “BSh” (Semiárido quente) segundo a classificação de Koopen.</hint>
+		<hint id='intro8'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro9'>Só um momento…</hint>
+		<hint id='intro10'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro11'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter5>	
+	
+	//missao 6
+<chapter6>
+	<Saida>	
+		<hint id='intro1'>De acordo com as pesquisas que fiz, descobri que Campina Grande é abastecida pelo açude de Boqueirão.</hint>
+		<hint id='intro2'>Ouvi falar que o reservatório é enorme.</hint>
+		<hint id='intro3'>Dessa forma, nosso próximo objetivo é dar uma passadinha por lá e chegar em Cabaceiras.</hint>
+		<hint id='intro4'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro5'>Vamos continuar com a nossa aventura, dirija até Cabaceiras.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Cabaceiras é uma cidade conhecida como a Roliúde Nordestina por ter servido de cenário para muitos filmes, a exemplo da obra de Ariano Suassuna: O Auto da Compadecida.</hint>
+		<hint id='intro4'>Para tanto que na cidade há um memorial cinematográfico com registros das maiores produções as quais ambientou.</hint>
+		<hint id='intro5'>Mas por que será que João Grilo e Chicó foram gravar Cabaceiras?</hint>
+		<hint id='intro6'>O município conta com uma arquitetura bem preservada de igrejas e moradias, tais como eram nos tempos passados.</hint>
+		<hint id='intro7'>Assim como é muito característica do que se tem no ideário de paisagem nordestina, com vegetação de caatinga e semiárido.</hint>
+		<hint id='intro8'>Em muitas produções até mesmo a população local atuou como figurante nas gravações, fortalecendo a veia artística dos Cabaceirenses.</hint>
+		<hint id='intro9'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro10'>Só um momento…</hint>
+		<hint id='intro11'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro12'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter6>	
+	
+	
+	//missao 7
+<chapter7>
+	<Saida>	
+		<hint id='intro1'>Para continuar, com a nossa temática sobre o abastecimento de água, vamos para o primeiro município na Paraíba que recebe a transposição das águas do São Francisco.</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Monteiro, que fica localizado na parte mais ao sul do Estado.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Como eu havia mencionado, Monteiro recebe as primeiras águas vindas da transposição na Paraíba.</hint>
+		<hint id='intro4'>O município está localizado na Mesorregião do Cariri Ocidental e possui a sua própria região imediata, ou seja, ela assume o papel de principal sobre as articulações intermunicipais.</hint>
+		<hint id='intro5'>Monteiro também realiza muitos festejos tradicionais em comemoração ao São João e São Pedro.</hint>
+		<hint id='intro6'>Por fim, um dos aspectos que chamam atenção no botão “Informações” é sobre a sua nota dos anos finais no Índice de Desenvolvimento da Educação Básica - IDEB</hint>
+		<hint id='intro7'>Que chegou a 4,8 estando entre as 20 melhores notas do Estado.</hint>
+		<hint id='intro8'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro9'>Só um momento…</hint>
+		<hint id='intro10'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro11'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter7>	
+	
+	//missao 8
+<chapter8>
+	<Saida>	
+		<hint id='intro1'>Nosso próximo objetivo é estudar o ponto mais alto do Estado no parque Estadual do Pico do Jabre.</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Maturéia.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>O município de Maturéia está entre os municípios que possuem os menores valores populacionais, onde no último censo foram 5.939 pessoas.</hint>
+		<hint id='intro4'>Maturéia faz parte da faixa do planalto da Borborema, mais especificamente a oeste do Estado.</hint>
+		<hint id='intro5'>Dessa maneira o município possui o ponto mais alto do Estado que é o Pico do Jabre, um afloramento rochoso que chega a 1.197m de altitude além de possuir uma vegetação que vai se adaptando a altitude.</hint>
+		<hint id='intro6'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”. </hint>
+		<hint id='intro7'>Só um momento…</hint>
+		<hint id='intro8'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro9'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+
+</chapter8>	
+	
+	//missao 9
+<chapter9>
+	<Saida>	
+		<hint id='intro1'>Seguindo na faixa serrana do Estado iremos até o município de Princesa Isabel.</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Princesa Isabel.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Este município possui diversas curiosidades sobre o seu conturbado passado político.</hint>
+		<hint id='intro4'>Foi o território que se declarou independente do país que perdurou 5 meses. </hint>
+		<hint id='intro5'>Por conta de desavenças familiares com a administração do Estado da Paraíba em meados de 1930.</hint>
+		<hint id='intro6'>Sua vegetação tem características de mata serrana além de espécies de cactáceas que está sempre presente na faixa oeste do Estado.</hint>
+		<hint id='intro7'>Possui uma das maiores notas dos anos finais no Índice de Desenvolvimento da Educação Básica - IDEB no Estado.</hint>
+		<hint id='intro8'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”. </hint>
+		<hint id='intro9'>Só um momento…</hint>
+		<hint id='intro10'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro11'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter9>	
+	
+	//missao 10
+<chapter10>
+	<Saida>	
+		<hint id='intro1'>Nossa próxima etapa é visitar o município que fica entre dois açudes no interior do sertão do Estado.</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Coremas.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>O município de Coremas está localizado na Região Geográfica intermediária de Patos, isso significa Patos exerce uma centralidade econômica para o acesso a bens e serviços ao município de patos. </hint>
+		<hint id='intro4'>Mesmo que Pombal e Sousa sejam mais próximos em termos de distância.</hint>
+		<hint id='intro5'>O município também conta com a característica de possuir dois açudes criados para fornecer água para 112 municípios espalhados pela mesorregião do Sertão Paraibano </hint>
+		<hint id='intro6'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”. </hint>
+		<hint id='intro7'>Só um momento…</hint>
+		<hint id='intro8'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro9'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter10>	
+
+	//missao 11
+<chapter11>
+	<Saida>	
+		<hint id='intro1'>O que acha de dar uma passadinha pela Cidade Sorriso?</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Sousa.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Esta, que é a sexta cidade mais populosa da Paraíba, é sempre lembrada por seu icônico parque dos dinossauros.</hint>
+		<hint id='intro4'>O que antes compreendia o fundo de um lago e hoje é o solo compactado, preservou muitas pegadas de animais pré-históricos.</hint>
+		<hint id='intro5'>Para tanto, seu parque é mundialmente conhecido pela qualidade e quantidade de registros.</hint>
+		<hint id='intro6'>Sendo de extrema importância para os estudos dos dinossauros.</hint>
+		<hint id='intro7'>Mas não pense que apenas os pré-históricos habitantes do município marcaram história, o Sousa foi o primeiro time de futebol do sertão paraibano a conquistar o campeonato do Estado!</hint>
+		<hint id='intro8'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”.</hint>
+		<hint id='intro9'>Só um momento…</hint>
+		<hint id='intro10'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro11'>Podemos seguir para o nosso próximo objetivo.</hint>
+	</Chegada>
+</chapter11>	
+
+	//missao 12
+<chapter12>
+	<Saida>	
+		<hint id='intro1'>Para finalizar o nosso último objetivo, vamos rumar para leste do Estado, Patos o quarto maior município do Estado.</hint>
+		<hint id='intro2'>Visualize a rota de sua preferência utilizando o botão “Mapas”. Tenha cuidado com o trajeto, não gaste toda a bateria e qualquer dúvida acesse o botão “Dúvidas”.</hint>
+		<hint id='intro3'>Dirija até o município de Patos.</hint>
+	</Saida>
+	
+	<Chegada>
+		<hint id='intro1'>Parabéns você chegou ao destino! Obrigado pela sua ajuda!</hint>
+		<hint id='intro2'>Irei coletar de alguns dados para as minhas pesquisas...</hint>
+		<hint id='intro3'>Encontrei algumas curiosidades sobre Patos.</hint>
+		<hint id='intro4'>Uma das cidades mais quentes do Estado, com temperatura média entre 34° e 36° o verão.</hint>
+		<hint id='intro5'>Muito marcada pela religiosidade, tanto para com a Catedral da Nossa Senhora da Guia quanto pelo Parque Cruz da Menina.</hint>
+		<hint id='intro6'>Um fato curioso é dado pela justificativa da existência de um obelisco em uma praça da cidade. Este foi construído para registrar a importância que teve a cidade no eclipse do Sol em 1940.</hint>
+		<hint id='intro7'>O clima é quente e permite que a vegetação seja tipicamente de caatinga, encontrando muitas espécies de cactáceas em sua paisagem.</hint>
+		<hint id='intro8'>Enquanto isso, para você saber de algumas informações acesse o botão "Informações”. </hint>
+		<hint id='intro9'>Só um momento…</hint>
+		<hint id='intro10'>Pronto, finalizamos a nossa coleta de dados.</hint>
+		<hint id='intro11'>Parabéns Finalizamos o modo campanha, se quiser conhecer mais a paraíba utilize o modo Livre.</hint>
+	</Chegada>
+</chapter12>
+
+
+
+	
+	

@@ -16,6 +16,8 @@ export interface Game {
   skillsDeveloped: string[];
   howToUse: string;
   featured: boolean;
+  /** Caminho estático do jogo jogável (ex.: "/expedicao-paraiba/index.html"). Se ausente, o jogo não é jogável no site. */
+  playUrl?: string;
 }
 
 export interface BlogPost {

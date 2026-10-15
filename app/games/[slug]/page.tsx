@@ -170,7 +170,23 @@ export default async function GamePage({ params }: GamePageProps) {
             </div>
 
             {/* CTA */}
-            <div className="mt-8">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              {game.playUrl && (
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white sm:w-auto max-w-full overflow-hidden"
+                >
+                  <Link
+                    href={game.playUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="truncate"
+                  >
+                    Jogar Agora
+                  </Link>
+                </Button>
+              )}
               <Button
                 asChild
                 size="lg"

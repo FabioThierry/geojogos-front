@@ -12,6 +12,8 @@ export interface Game {
   skillsDeveloped: string[];
   howToUse: string;
   featured: boolean;
+  /** Caminho estático do jogo jogável (ex.: "/expedicao-paraiba/index.html"). Se ausente, o jogo não é jogável no site. */
+  playUrl?: string;
 }
 
 export const games: Game[] = [
@@ -65,6 +67,7 @@ export const games: Game[] = [
     howToUse:
       "Os professores podem utilizar Limpa Riacho em projetos de educação ambiental e ciências, promovendo discussões sobre práticas sustentáveis e políticas públicas, realizando atividades complementares como visitas a rios locais ou produção de cartazes, e estimulando os alunos a criarem campanhas de conscientização baseadas no jogo. Além disso, o jogo pode ser integrado a atividades interdisciplinares com Biologia, Geografia e Educação Moral e Cívica, fortalecendo o vínculo entre o conteúdo escolar e a realidade ambiental dos estudantes.",
     featured: true,
+    playUrl: "/limpa-riacho-coleta-seletiva/index.html",
   },
   {
     id: "3",
@@ -94,6 +97,7 @@ export const games: Game[] = [
     howToUse:
       "Os professores podem utilizar o Expedição Paraíba como recurso didático para enriquecer suas aulas de Geografia, explorando os mapas temáticos e dados disponíveis no jogo para discutir conteúdos como divisão política, bacias hidrográficas, clima, vegetação, territórios indígenas e quilombolas, além de indicadores sociais e econômicos. O jogo pode ser integrado em atividades práticas de leitura cartográfica, debates sobre a realidade dos municípios, projetos interdisciplinares envolvendo História e Ciências Ambientais, ou ainda como ferramenta para introduzir noções de geoprocessamento de forma acessível. Além disso, o modo campanha, com missões guiadas pelo personagem Chico, pode ser usado para estimular a curiosidade e o protagonismo dos alunos, tornando o aprendizado mais participativo e próximo de sua realidade cotidiana.",
     featured: true,
+    playUrl: "/expedicao-paraiba/index.html",
   },
   {
     id: "4",
