@@ -6,10 +6,11 @@
 	<title>Jump in CG</title>
 	
 	<!-- Allow fullscreen mode on iOS devices. (These are Apple specific meta tags.) -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<link rel="apple-touch-icon" sizes="256x256" href="icon-256.png" />
+	<link rel="manifest" href="manifest.webmanifest" />
 	<meta name="HandheldFriendly" content="true" />
 	
 	<!-- Chrome for Android web app tags -->
@@ -35,6 +36,8 @@
 			-ms-touch-action: none;
 		}
     </style>
+	<link rel="stylesheet" href="../game-fullscreen.css" />
+	<script src="../game-fullscreen.js" defer></script>
 	
 
 </head> 
