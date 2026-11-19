@@ -9,6 +9,7 @@ export interface Game {
   shortDescription: string;
   fullDescription: string;
   coverImage: string;
+  ogImage?: string;
   type: "Digital" | "Jogo de Tabuleiro";
   category: "Geografia" | "Interdisciplinar";
   targetLevel: string;

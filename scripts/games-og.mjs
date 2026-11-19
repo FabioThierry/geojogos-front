@@ -22,6 +22,14 @@ const SITE_URL = "https://www.geojogos.com.br";
 // tela de loading do Construct 3 (definida em public/<slug>/style.css).
 const GAMES = [
   {
+    slug: "jump-in-cg-acude-velho",
+    title: "Jump in CG: Açude Velho",
+    description:
+      "Jump in CG é uma aventura no calçadão às margens do Açude Velho.",
+    background: "#000000",
+    customImage: true,
+  },
+  {
     slug: "limpa-riacho-coleta-seletiva",
     title: "Limpa Riacho: Coleta Seletiva",
     description:
@@ -132,7 +140,9 @@ async function injectMeta(game) {
 
 for (const game of GAMES) {
   console.log(`• ${game.slug}`);
-  await generateImage(game);
+  if (!game.customImage) {
+    await generateImage(game);
+  }
   await injectMeta(game);
 }
 

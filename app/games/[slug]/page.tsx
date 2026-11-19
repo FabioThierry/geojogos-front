@@ -43,9 +43,40 @@ export async function generateMetadata({
     };
   }
 
+  const ogImage = game.ogImage
+    ? {
+        url: game.ogImage,
+        width: 1200,
+        height: 675,
+        alt: game.title,
+        type: "image/jpeg",
+      }
+    : {
+        url: "/images/og-image.jpg",
+        width: 4128,
+        height: 3096,
+        alt: "GeoJogos - Jogos Educacionais para Geografia",
+        type: "image/jpeg",
+      };
+
   return {
     title: game.title,
     description: game.shortDescription,
+    openGraph: {
+      type: "website",
+      locale: "pt_BR",
+      url: `https://www.geojogos.com.br/games/${slug}`,
+      siteName: "GeoJogos",
+      title: game.title,
+      description: game.shortDescription,
+      images: [ogImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: game.title,
+      description: game.shortDescription,
+      images: [ogImage.url],
+    },
   };
 }
 

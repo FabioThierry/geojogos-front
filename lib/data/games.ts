@@ -5,6 +5,7 @@ export interface Game {
   shortDescription: string;
   fullDescription: string;
   coverImage: string;
+  ogImage?: string;
   type: "Digital" | "Jogo de Tabuleiro";
   category: "Geografia" | "Interdisciplinar";
   targetLevel: string;
@@ -26,6 +27,7 @@ export const games: Game[] = [
     fullDescription:
       "Jump In CG é um jogo digital educativo desenvolvido com o software Construct 2, como parte de uma iniciativa para promover o ensino de Geografia por meio de experiências interativas. Ambientado no Açude Velho, um ponto emblemático da cidade de Campina Grande (PB), o jogo convida os jogadores a explorarem esse espaço urbano, reconhecendo elementos geográficos, históricos e culturais. A proposta é que o jogador interaja com o cenário, identifique locais e compreenda a dinâmica urbana a partir de uma perspectiva lúdica e crítica.",
     coverImage: "/jump-in-cg.jpg",
+    ogImage: "/jump-in-cg-acude-velho/og-image.jpg",
     type: "Digital",
     category: "Geografia",
     targetLevel: "Ensino Fundamental e Médio (6-9ª série)",
@@ -50,6 +52,7 @@ export const games: Game[] = [
     fullDescription:
       "Limpa Riacho é um jogo educativo voltado para a conscientização ambiental, especialmente sobre a preservação dos recursos hídricos. Nele, o jogador assume o papel de um agente ambiental que precisa limpar um riacho poluído, enfrentando desafios como coleta de resíduos, identificação de fontes de poluição e tomada de decisões sustentáveis. O jogo combina elementos de aventura com educação ambiental, promovendo o engajamento dos alunos em temas ecológicos de forma divertida e reflexiva.",
     coverImage: "/Limopa-riacho.jpeg",
+    ogImage: "/limpa-riacho-coleta-seletiva/og-image.jpg",
     type: "Digital",
     category: "Interdisciplinar",
     targetLevel: "Ensino Fundamental e Médio (6-9ª série)",
@@ -79,6 +82,7 @@ export const games: Game[] = [
     fullDescription:
       "Expedição Paraíba é um jogo digital pedagógico criado para apoiar o ensino de Geografia no nível básico, o jogo combina elementos cartográficos e geográficos do estado da Paraíba em uma plataforma interativa. Ele permite que os jogadores explorem todos os 223 municípios do estado em dois modos distintos: Modo Livre, que possibilita a locomoção aberta entre os municípios, e Modo Campanha, em que o personagem Chico, um geógrafo fictício, guia os jogadores por missões educativas. O jogo integra mapas temáticos, dados estatísticos e recursos de geoprocessamento, aproximando os estudantes da linguagem cartográfica e da realidade geográfica local. O jogo se destaca por unir ludicidade, tecnologia e educação, tornando o aprendizado mais dinâmico e envolvente.",
     coverImage: "/expedicao-paraiba.jpg",
+    ogImage: "/expedicao-paraiba/og-image.jpg",
     type: "Digital",
     category: "Geografia",
     targetLevel: "Ensino Fundamental e Médio (6-9ª série)",
