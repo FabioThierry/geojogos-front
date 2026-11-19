@@ -39,6 +39,7 @@ export const games: Game[] = [
     howToUse:
       "Os professores podem utilizar Jump In CG como recurso didático em aulas sobre urbanização, paisagem e território. Eles podem propor atividades de reconhecimento de espaços locais com base no jogo, estimular debates sobre o uso e ocupação do espaço urbano, incentivar os alunos a criarem mapas mentais ou narrativas sobre o Açude Velho e até mesmo promover projetos interdisciplinares que envolvam História, Artes e Ciências Humanas, ampliando o olhar dos estudantes sobre o ambiente em que vivem.",
     featured: true,
+    playUrl: "/jump-in-cg-acude-velho/index.html",
   },
   {
     id: "2",
